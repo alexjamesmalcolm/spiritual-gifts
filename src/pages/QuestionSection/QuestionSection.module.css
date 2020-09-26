@@ -1,0 +1,25 @@
+.paginationContainer {
+  margin-bottom: 1rem;
+}
+.paginationLinks {
+  display: flex;
+  justify-content: space-evenly;
+}
+.fieldSet {
+  margin-bottom: 1rem;
+}
+.answersContainer {
+  display: grid;
+  gap: 1rem 0;
+  grid-template-columns: max-content auto max-content auto max-content auto max-content auto;
+}
+@media (max-width: 900px) {
+  .answersContainer {
+    grid-template-columns: max-content auto max-content auto;
+  }
+}
+@media (max-width: 524px) {
+  .answersContainer {
+    grid-template-columns: max-content max-content;
+  }
+}
