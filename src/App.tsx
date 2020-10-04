@@ -1,6 +1,7 @@
 import React, { Suspense } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import useRoutes from "hooks/useRoutes";
+import Loading from "components/Loading";
 
 const App = () => {
   const routes = useRoutes();
@@ -10,7 +11,7 @@ const App = () => {
         <Switch>
           {routes.map(({ path, Component }) => (
             <Route exact path={path} key={path}>
-              <Suspense fallback={<p>Loading...</p>}>
+              <Suspense fallback={<Loading />}>
                 <Component />
               </Suspense>
             </Route>
