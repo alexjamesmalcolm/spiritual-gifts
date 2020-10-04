@@ -85,39 +85,45 @@ const QuestionSection = () => {
   return (
     <div className={styles.container}>
       <PaginationControls />
-      {questionsWithAnswers.map((question) => (
-        <fieldset
-          key={question.number}
-          id={`question-${question.number}`}
-          className={styles.fieldSet}
-        >
-          <legend>
-            <span>{question.number}) </span>
-            <span>{question.textContent}</span>
-          </legend>
-          <div className={styles.answersContainer}>
-            {answers.map((answer) => (
-              <Fragment key={answer.value}>
-                <input
-                  type="radio"
-                  id={`answer-${question.number}-${answer.value}`}
-                  name={question.number.toString()}
-                  onChange={() =>
-                    answerQuestion({
-                      answer: answer.value,
-                      questionNumber: question.number,
-                    })
-                  }
-                  checked={question.answer === answer.value}
-                />
-                <label htmlFor={`answer-${question.number}-${answer.value}`}>
-                  {answer.value}) {answer.textContent}
-                </label>
-              </Fragment>
-            ))}
-          </div>
-        </fieldset>
-      ))}
+      {questionsWithAnswers.map((question) => {
+        const fieldsetId = `${styles.question}-${question.number}`;
+        return (
+          <fieldset
+            key={fieldsetId}
+            id={fieldsetId}
+            className={styles.fieldSet}
+          >
+            <legend>
+              <span>{question.number}) </span>
+              <span>{question.textContent}</span>
+            </legend>
+            <div className={styles.answersContainer}>
+              {answers.map((answer) => {
+                const inputId = `${styles.answer}-${question.number}-${answer.value}`;
+                return (
+                  <Fragment key={inputId}>
+                    <input
+                      type="radio"
+                      id={inputId}
+                      name={fieldsetId}
+                      onChange={() =>
+                        answerQuestion({
+                          answer: answer.value,
+                          questionNumber: question.number,
+                        })
+                      }
+                      checked={question.answer === answer.value}
+                    />
+                    <label htmlFor={inputId}>
+                      {answer.value}) {answer.textContent}
+                    </label>
+                  </Fragment>
+                );
+              })}
+            </div>
+          </fieldset>
+        );
+      })}
       <PaginationControls />
     </div>
   );
