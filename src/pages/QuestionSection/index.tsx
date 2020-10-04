@@ -37,6 +37,7 @@ const PaginationControls = () => {
   return (
     <div className={styles.paginationContainer}>
       <div className={styles.paginationLinks}>
+        <Link to="/">Home</Link>
         {isAbleToGoBack && (
           <Link to={`/question-set/${questionSetNumber - 1}`}>Previous</Link>
         )}
