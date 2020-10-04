@@ -4,7 +4,11 @@ import { Link } from "react-router-dom";
 import styles from "./Homepage.module.css";
 
 const Homepage = () => {
-  const { unansweredQuestions, questionsWithAnswers } = useAnswers();
+  const {
+    unansweredQuestions,
+    questionsWithAnswers,
+    clearAnswers,
+  } = useAnswers();
   const [firstUnansweredQuestion] = unansweredQuestions;
   const hasStarted = useMemo(
     () =>
@@ -19,15 +23,24 @@ const Homepage = () => {
         you would like to be, or think you ought to be. Consider: How true are
         these statements for you? What has been your experience?
       </p>
-      {hasStarted ? (
-        <Link
-          to={`/question-set/${Math.ceil(firstUnansweredQuestion.number / 19)}`}
-        >
-          Continue
-        </Link>
-      ) : (
-        <Link to="/question-set/1">Start</Link>
-      )}
+      <div className={styles.assessmentLinksContainer}>
+        {hasStarted ? (
+          <>
+            <Link to="/question-set/1" onClick={clearAnswers}>
+              Reset
+            </Link>
+            <Link
+              to={`/question-set/${Math.ceil(
+                firstUnansweredQuestion.number / 19
+              )}`}
+            >
+              Continue
+            </Link>
+          </>
+        ) : (
+          <Link to="/question-set/1">Start</Link>
+        )}
+      </div>
     </div>
   );
 };

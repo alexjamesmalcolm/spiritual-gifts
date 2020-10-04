@@ -2,6 +2,14 @@
   margin: auto;
 }
 
+.assessmentLinksContainer {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: max-content;
+  gap: 2rem;
+  justify-content: center;
+}
+
 @media (max-width: 320px) {
   .container {
     font-size: 24px;
