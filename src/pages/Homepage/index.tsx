@@ -24,6 +24,7 @@ const Homepage = () => {
         you would like to be, or think you ought to be. Consider: How true are
         these statements for you? What has been your experience?
       </p>
+      <p>This assessment could take 45 minutes.</p>
       <div className={styles.assessmentLinksContainer}>
         {hasStarted ? (
           <>
