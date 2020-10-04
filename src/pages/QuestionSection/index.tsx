@@ -84,7 +84,9 @@ const QuestionSection = () => {
   );
   return (
     <div className={styles.container}>
-      <PaginationControls />
+      <header>
+        <PaginationControls />
+      </header>
       {questionsWithAnswers.map((question) => {
         const fieldsetId = `${styles.question}-${question.number}`;
         return (
