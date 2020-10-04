@@ -18,6 +18,7 @@ const useAnswers = (
   questionSetNumber?: number
 ): {
   questionsWithAnswers: AnsweredQuestion[];
+  unansweredQuestions: Question[];
   answerQuestion: (props: AnswerQuestionProps) => void;
 } => {
   const allQuestions = useQuestions();
@@ -27,7 +28,7 @@ const useAnswers = (
     [allQuestions, questionSet, questionSetNumber]
   );
   const answers = useSelector((store: RootState) => store.answers.questions);
-  const questionsWithAnswers = useMemo(
+  const questionsWithAnswers = useMemo<AnsweredQuestion[]>(
     () =>
       questions.map((question) => {
         const answer = answers.find(
@@ -44,7 +45,12 @@ const useAnswers = (
     },
     [dispatch]
   );
-  return { answerQuestion, questionsWithAnswers };
+  const unansweredQuestions = useMemo(
+    () =>
+      questionsWithAnswers.filter((question) => question.answer === undefined),
+    [questionsWithAnswers]
+  );
+  return { answerQuestion, questionsWithAnswers, unansweredQuestions };
 };
 
 export default useAnswers;

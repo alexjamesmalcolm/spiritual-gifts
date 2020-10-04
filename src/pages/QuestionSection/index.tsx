@@ -15,14 +15,7 @@ const PaginationControls = () => {
   const isAbleToGoForwards = useMemo(() => questionSetNumber !== 7, [
     questionSetNumber,
   ]);
-  const { questionsWithAnswers: allQuestionsWithAnswers } = useAnswers();
-  const unansweredQuestions = useMemo(
-    () =>
-      allQuestionsWithAnswers.filter(
-        (question) => question.answer === undefined
-      ),
-    [allQuestionsWithAnswers]
-  );
+  const { unansweredQuestions } = useAnswers();
   const currentPageQuestions = useQuestionSet(questionSetNumber);
   const unansweredQuestionsFromPreviousPages = useMemo(
     () =>
