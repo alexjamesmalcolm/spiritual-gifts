@@ -3,6 +3,7 @@ import { Link, useParams } from "react-router-dom";
 import useAnswers from "hooks/useAnswers";
 import useQuestionSet from "hooks/useQuestionSet";
 import styles from "./QuestionSection.module.css";
+import { questionsPerPage, setsOfQuestions } from "utils/constants";
 
 const PaginationControls = () => {
   const params: { questionSetNumber: string } = useParams();
@@ -12,9 +13,10 @@ const PaginationControls = () => {
   const isAbleToGoBack = useMemo(() => questionSetNumber !== 1, [
     questionSetNumber,
   ]);
-  const isAbleToGoForwards = useMemo(() => questionSetNumber !== 7, [
-    questionSetNumber,
-  ]);
+  const isAbleToGoForwards = useMemo(
+    () => questionSetNumber !== setsOfQuestions,
+    [questionSetNumber]
+  );
   const { unansweredQuestions } = useAnswers();
   const currentPageQuestions = useQuestionSet(questionSetNumber);
   const unansweredQuestionsFromPreviousPages = useMemo(
@@ -44,7 +46,11 @@ const PaginationControls = () => {
           <p>Please go back and answer the following questions:</p>
           {unansweredQuestionsFromPreviousPages.map((question) => (
             <span key={question.number}>
-              <Link to={`/question-set/${Math.ceil(question.number / 19)}`}>
+              <Link
+                to={`/question-set/${Math.ceil(
+                  question.number / questionsPerPage
+                )}`}
+              >
                 {question.number}
               </Link>
               ,{" "}
