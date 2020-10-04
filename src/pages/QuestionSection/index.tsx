@@ -111,7 +111,7 @@ const QuestionSection = () => {
                   checked={question.answer === answer.value}
                 />
                 <label htmlFor={`answer-${question.number}-${answer.value}`}>
-                  {answer.textContent}
+                  {answer.value}) {answer.textContent}
                 </label>
               </Fragment>
             ))}
