@@ -43,6 +43,9 @@ const Homepage = () => {
           <Link to="/question-set/1">Start</Link>
         )}
       </div>
+      <footer className={styles.footer}>
+        <small>This site is not affiliated with any organization.</small>
+      </footer>
     </div>
   );
 };
