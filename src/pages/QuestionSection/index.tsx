@@ -87,45 +87,47 @@ const QuestionSection = () => {
       <header>
         <PaginationControls />
       </header>
-      {questionsWithAnswers.map((question) => {
-        const fieldsetId = `${styles.question}-${question.number}`;
-        return (
-          <fieldset
-            key={fieldsetId}
-            id={fieldsetId}
-            className={styles.fieldSet}
-          >
-            <legend>
-              <span>{question.number}) </span>
-              <span>{question.textContent}</span>
-            </legend>
-            <div className={styles.answersContainer}>
-              {answers.map((answer) => {
-                const inputId = `${styles.answer}-${question.number}-${answer.value}`;
-                return (
-                  <Fragment key={inputId}>
-                    <input
-                      type="radio"
-                      id={inputId}
-                      name={fieldsetId}
-                      onChange={() =>
-                        answerQuestion({
-                          answer: answer.value,
-                          questionNumber: question.number,
-                        })
-                      }
-                      checked={question.answer === answer.value}
-                    />
-                    <label htmlFor={inputId}>
-                      {answer.value}) {answer.textContent}
-                    </label>
-                  </Fragment>
-                );
-              })}
-            </div>
-          </fieldset>
-        );
-      })}
+      <main>
+        {questionsWithAnswers.map((question) => {
+          const fieldsetId = `${styles.question}-${question.number}`;
+          return (
+            <fieldset
+              key={fieldsetId}
+              id={fieldsetId}
+              className={styles.fieldSet}
+            >
+              <legend>
+                <span>{question.number}) </span>
+                <span>{question.textContent}</span>
+              </legend>
+              <div className={styles.answersContainer}>
+                {answers.map((answer) => {
+                  const inputId = `${styles.answer}-${question.number}-${answer.value}`;
+                  return (
+                    <Fragment key={inputId}>
+                      <input
+                        type="radio"
+                        id={inputId}
+                        name={fieldsetId}
+                        onChange={() =>
+                          answerQuestion({
+                            answer: answer.value,
+                            questionNumber: question.number,
+                          })
+                        }
+                        checked={question.answer === answer.value}
+                      />
+                      <label htmlFor={inputId}>
+                        {answer.value}) {answer.textContent}
+                      </label>
+                    </Fragment>
+                  );
+                })}
+              </div>
+            </fieldset>
+          );
+        })}
+      </main>
       <PaginationControls />
     </div>
   );
