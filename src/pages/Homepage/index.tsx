@@ -40,7 +40,7 @@ const Homepage = () => {
             </Link>
           </>
         ) : (
-          <Link to="/question-set/1">Start</Link>
+          <Link to="/question-set/1">Start Assessment</Link>
         )}
       </div>
       <footer className={styles.footer}>
