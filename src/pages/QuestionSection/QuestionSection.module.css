@@ -13,6 +13,14 @@
   gap: 1rem 0;
   grid-template-columns: max-content auto max-content auto max-content auto max-content auto;
 }
+.question {
+}
+.answer {
+}
+.label {
+  width: max-content;
+}
+
 @media (max-width: 900px) {
   .answersContainer {
     grid-template-columns: max-content auto max-content auto;

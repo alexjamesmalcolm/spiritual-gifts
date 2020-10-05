@@ -3,6 +3,7 @@ import { Link, useParams } from "react-router-dom";
 import useAnswers from "hooks/useAnswers";
 import useQuestionSet from "hooks/useQuestionSet";
 import styles from "./QuestionSection.module.css";
+import { questionsPerPage, setsOfQuestions } from "utils/constants";
 
 const PaginationControls = () => {
   const params: { questionSetNumber: string } = useParams();
@@ -12,17 +13,11 @@ const PaginationControls = () => {
   const isAbleToGoBack = useMemo(() => questionSetNumber !== 1, [
     questionSetNumber,
   ]);
-  const isAbleToGoForwards = useMemo(() => questionSetNumber !== 7, [
-    questionSetNumber,
-  ]);
-  const { questionsWithAnswers: allQuestionsWithAnswers } = useAnswers();
-  const unansweredQuestions = useMemo(
-    () =>
-      allQuestionsWithAnswers.filter(
-        (question) => question.answer === undefined
-      ),
-    [allQuestionsWithAnswers]
+  const isAbleToGoForwards = useMemo(
+    () => questionSetNumber !== setsOfQuestions,
+    [questionSetNumber]
   );
+  const { unansweredQuestions } = useAnswers();
   const currentPageQuestions = useQuestionSet(questionSetNumber);
   const unansweredQuestionsFromPreviousPages = useMemo(
     () =>
@@ -37,6 +32,7 @@ const PaginationControls = () => {
   return (
     <div className={styles.paginationContainer}>
       <div className={styles.paginationLinks}>
+        <Link to="/">Home</Link>
         {isAbleToGoBack && (
           <Link to={`/question-set/${questionSetNumber - 1}`}>Previous</Link>
         )}
@@ -50,7 +46,11 @@ const PaginationControls = () => {
           <p>Please go back and answer the following questions:</p>
           {unansweredQuestionsFromPreviousPages.map((question) => (
             <span key={question.number}>
-              <Link to={`/question-set/${Math.ceil(question.number / 19)}`}>
+              <Link
+                to={`/question-set/${Math.ceil(
+                  question.number / questionsPerPage
+                )}`}
+              >
                 {question.number}
               </Link>
               ,{" "}
@@ -84,40 +84,50 @@ const QuestionSection = () => {
   );
   return (
     <div className={styles.container}>
-      <PaginationControls />
-      {questionsWithAnswers.map((question) => (
-        <fieldset
-          key={question.number}
-          id={`question-${question.number}`}
-          className={styles.fieldSet}
-        >
-          <legend>
-            <span>{question.number}) </span>
-            <span>{question.textContent}</span>
-          </legend>
-          <div className={styles.answersContainer}>
-            {answers.map((answer) => (
-              <Fragment key={answer.value}>
-                <input
-                  type="radio"
-                  id={`answer-${question.number}-${answer.value}`}
-                  name={question.number.toString()}
-                  onChange={() =>
-                    answerQuestion({
-                      answer: answer.value,
-                      questionNumber: question.number,
-                    })
-                  }
-                  checked={question.answer === answer.value}
-                />
-                <label htmlFor={`answer-${question.number}-${answer.value}`}>
-                  {answer.textContent}
-                </label>
-              </Fragment>
-            ))}
-          </div>
-        </fieldset>
-      ))}
+      <header>
+        <PaginationControls />
+      </header>
+      <main>
+        {questionsWithAnswers.map((question) => {
+          const fieldsetId = `${styles.question}-${question.number}`;
+          return (
+            <fieldset
+              key={fieldsetId}
+              id={fieldsetId}
+              className={styles.fieldSet}
+            >
+              <legend>
+                <span>{question.number}) </span>
+                <span>{question.textContent}</span>
+              </legend>
+              <div className={styles.answersContainer}>
+                {answers.map((answer) => {
+                  const inputId = `${styles.answer}-${question.number}-${answer.value}`;
+                  return (
+                    <Fragment key={inputId}>
+                      <input
+                        type="radio"
+                        id={inputId}
+                        name={fieldsetId}
+                        onChange={() =>
+                          answerQuestion({
+                            answer: answer.value,
+                            questionNumber: question.number,
+                          })
+                        }
+                        checked={question.answer === answer.value}
+                      />
+                      <label className={styles.label} htmlFor={inputId}>
+                        {answer.value}) {answer.textContent}
+                      </label>
+                    </Fragment>
+                  );
+                })}
+              </div>
+            </fieldset>
+          );
+        })}
+      </main>
       <PaginationControls />
     </div>
   );

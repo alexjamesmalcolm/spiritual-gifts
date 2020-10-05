@@ -1,7 +1,7 @@
 import { useCallback, useMemo } from "react";
 import useQuestionSet from "hooks/useQuestionSet";
 import useQuestions, { Question } from "../useQuestions";
-import { setAnswerOfQuestionNumbered } from "./reducer";
+import { setAnswerOfQuestionNumbered, clearAllAnswers } from "./reducer";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "store";
 
@@ -18,7 +18,9 @@ const useAnswers = (
   questionSetNumber?: number
 ): {
   questionsWithAnswers: AnsweredQuestion[];
+  unansweredQuestions: Question[];
   answerQuestion: (props: AnswerQuestionProps) => void;
+  clearAnswers: () => void;
 } => {
   const allQuestions = useQuestions();
   const questionSet = useQuestionSet(questionSetNumber || 1);
@@ -27,7 +29,7 @@ const useAnswers = (
     [allQuestions, questionSet, questionSetNumber]
   );
   const answers = useSelector((store: RootState) => store.answers.questions);
-  const questionsWithAnswers = useMemo(
+  const questionsWithAnswers = useMemo<AnsweredQuestion[]>(
     () =>
       questions.map((question) => {
         const answer = answers.find(
@@ -44,7 +46,20 @@ const useAnswers = (
     },
     [dispatch]
   );
-  return { answerQuestion, questionsWithAnswers };
+  const clearAnswers = useCallback(() => {
+    dispatch(clearAllAnswers());
+  }, [dispatch]);
+  const unansweredQuestions = useMemo(
+    () =>
+      questionsWithAnswers.filter((question) => question.answer === undefined),
+    [questionsWithAnswers]
+  );
+  return {
+    answerQuestion,
+    clearAnswers,
+    questionsWithAnswers,
+    unansweredQuestions,
+  };
 };
 
 export default useAnswers;
