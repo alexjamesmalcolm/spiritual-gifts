@@ -4,3 +4,38 @@
   flex-direction: column;
   align-items: center;
 }
+
+.resultsContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  margin: 1rem;
+}
+.name,
+.rank,
+.score {
+  border: 1px black solid;
+  padding: 0.25rem 0;
+  padding-left: 1rem;
+}
+.name {
+  grid-column: 1;
+  border-right: none;
+}
+.description {
+  grid-column: 1/4;
+  margin-bottom: 1rem;
+  background-color: #ffffb4;
+  border: 1px black solid;
+  border-top: none;
+}
+.rank {
+  grid-column: 3;
+}
+.score {
+  grid-column: 2;
+  border-right: none;
+}
+
+.header {
+  border: none;
+}

@@ -1,41 +1,28 @@
 import { useMemo } from "react";
 import useAnswers from "hooks/useAnswers";
-import { Category } from "hooks/useQuestions";
+import useCategories, { Category, CategoryName } from "hooks/useCategories";
 
-interface Result {
-  category: Category;
+export interface Result extends Category {
   score: number;
+  rank: number;
 }
 
-const useResults = (): Result[] => {
+const useResults = (categoryName?: CategoryName): Result[] => {
   const { questionsWithAnswers } = useAnswers();
+  const categories = useCategories();
   return useMemo<Result[]>(
     () =>
-      questionsWithAnswers
-        .reduce((accumulator: Result[], currentValue) => {
-          const isCategoryPresentAlready = accumulator.some(
-            (result) => result.category === currentValue.category
-          );
-          if (isCategoryPresentAlready) {
-            return accumulator.map((result) =>
-              result.category === currentValue.category
-                ? {
-                    ...result,
-                    score: result.score + (currentValue.answer || 0),
-                  }
-                : result
-            );
-          } else {
-            return accumulator.concat([
-              {
-                category: currentValue.category,
-                score: currentValue.answer || 0,
-              },
-            ]);
-          }
-        }, [])
-        .sort((a, b) => b.score - a.score),
-    [questionsWithAnswers]
+      categories
+        .map((category) => ({
+          ...category,
+          score: questionsWithAnswers
+            .filter((question) => question.category === category.name)
+            .reduce((score, question) => score + (question.answer || 0), 0),
+        }))
+        .sort((a, b) => b.score - a.score)
+        .map((result, index) => ({ ...result, rank: index + 1 }))
+        .filter((result) => !categoryName || categoryName === result.name),
+    [categories, categoryName, questionsWithAnswers]
   );
 };
 

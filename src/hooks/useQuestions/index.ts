@@ -1,26 +1,7 @@
-export type Category =
-  | "Wisdom"
-  | "Administration"
-  | "Apostleship"
-  | "Craftsmanship"
-  | "Creative Communication"
-  | "Discernment"
-  | "Encouragement"
-  | "Evangelism"
-  | "Faith"
-  | "Giving"
-  | "Helps"
-  | "Hospitality"
-  | "Intercession"
-  | "Knowledge"
-  | "Leadership"
-  | "Mercy"
-  | "Prophecy"
-  | "Shepherding"
-  | "Teaching";
+import { CategoryName } from "hooks/useCategories";
 
 export interface Question {
-  category: Category;
+  category: CategoryName;
   number: number;
   textContent: string;
 }
