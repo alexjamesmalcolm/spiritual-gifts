@@ -17,6 +17,10 @@
 }
 .answer {
 }
+.label {
+  width: max-content;
+}
+
 @media (max-width: 900px) {
   .answersContainer {
     grid-template-columns: max-content auto max-content auto;

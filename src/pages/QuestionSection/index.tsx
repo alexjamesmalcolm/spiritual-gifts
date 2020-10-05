@@ -117,7 +117,7 @@ const QuestionSection = () => {
                         }
                         checked={question.answer === answer.value}
                       />
-                      <label htmlFor={inputId}>
+                      <label className={styles.label} htmlFor={inputId}>
                         {answer.value}) {answer.textContent}
                       </label>
                     </Fragment>
