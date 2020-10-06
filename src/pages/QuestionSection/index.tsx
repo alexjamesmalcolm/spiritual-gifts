@@ -2,6 +2,7 @@ import React, { Fragment, useMemo } from "react";
 import { Link, useParams } from "react-router-dom";
 import useAnswers from "hooks/useAnswers";
 import useQuestionSet from "hooks/useQuestionSet";
+import classNames from "classnames";
 import styles from "./QuestionSection.module.css";
 import { questionsPerPage, setsOfQuestions } from "utils/constants";
 
@@ -103,12 +104,19 @@ const QuestionSection = () => {
               <div className={styles.answersContainer}>
                 {answers.map((answer) => {
                   const inputId = `${styles.answer}-${question.number}-${answer.value}`;
+                  const answerValueClass = {
+                    [styles.zero]: answer.value === 0,
+                    [styles.one]: answer.value === 1,
+                    [styles.two]: answer.value === 2,
+                    [styles.three]: answer.value === 3,
+                  };
                   return (
                     <Fragment key={inputId}>
                       <input
                         type="radio"
                         id={inputId}
                         name={fieldsetId}
+                        className={classNames(styles.input, answerValueClass)}
                         onChange={() =>
                           answerQuestion({
                             answer: answer.value,
@@ -117,7 +125,10 @@ const QuestionSection = () => {
                         }
                         checked={question.answer === answer.value}
                       />
-                      <label className={styles.label} htmlFor={inputId}>
+                      <label
+                        className={classNames(styles.label, answerValueClass)}
+                        htmlFor={inputId}
+                      >
                         {answer.value}) {answer.textContent}
                       </label>
                     </Fragment>

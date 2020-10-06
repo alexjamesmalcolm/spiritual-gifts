@@ -21,13 +21,56 @@
   width: max-content;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 970px) {
   .answersContainer {
     grid-template-columns: max-content auto max-content auto;
   }
+  .input.zero,
+  .input.one {
+    grid-column: 1;
+  }
+  .label.zero,
+  .label.one {
+    grid-column: 2;
+  }
+  .input.two,
+  .input.three {
+    grid-column: 3;
+  }
+  .label.two,
+  .label.three {
+    grid-column: 4;
+  }
+  .two {
+    grid-row: 1;
+  }
 }
-@media (max-width: 524px) {
+@media (max-width: 570px) {
   .answersContainer {
     grid-template-columns: max-content max-content;
+  }
+  .input.zero,
+  .input.one,
+  .input.two,
+  .input.three {
+    grid-column: 1;
+  }
+  .label.zero,
+  .label.one,
+  .label.two,
+  .label.three {
+    grid-column: 2;
+  }
+  .zero {
+    grid-row: 1;
+  }
+  .one {
+    grid-row: 2;
+  }
+  .two {
+    grid-row: 3;
+  }
+  .three {
+    grid-row: 4;
   }
 }
