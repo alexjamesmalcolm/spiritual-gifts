@@ -42,11 +42,10 @@ const useCategories = (): Category[] =>
             have more common sense than the average person.
           </p>
           <p>
-            Cautions: For God&#39;s knowledge to go out, it must first come in.
-            Don&#39;t sit on your Bible knowledge as though you &quot;have
-            enough.&quot; This gift of wisdom has greater impact as your
-            knowledge of God&#39;s Word grows and as you become more involved in
-            other people&#39;s lives.
+            Cautions: For God's knowledge to go out, it must first come in.
+            Don't sit on your Bible knowledge as though you "have enough." This
+            gift of wisdom has greater impact as your knowledge of God's Word
+            grows and as you become more involved in other people's lives.
           </p>
         </div>
       ),
@@ -58,7 +57,7 @@ const useCategories = (): Category[] =>
           <p>
             The spiritual capability to understand what makes an organization
             function, and the special ability to plan and execute procedures
-            that increase the church&#39;s organizational effectiveness. (1
+            that increase the church's organizational effectiveness. (1
             Corinthians 12:28)
           </p>
           <p>
@@ -66,22 +65,21 @@ const useCategories = (): Category[] =>
             steps that need to be taken in order to realize a given objective.
             Gifted administrators are committed to effectiveness and efficiency.
             They can look at a situation and bring order to chaos, keeping the
-            overall picture in mind. Administrators are needed who can
-            &quot;steward&quot; the resources of the local church. These
-            resources include money, buildings, staff, and volunteers. Though a
-            person with this gift is mostly behind the scenes, they enable the
-            &quot;up front&quot; ministries and gifts to be more efficient and
-            effective.
+            overall picture in mind. Administrators are needed who can "steward"
+            the resources of the local church. These resources include money,
+            buildings, staff, and volunteers. Though a person with this gift is
+            mostly behind the scenes, they enable the "up front" ministries and
+            gifts to be more efficient and effective.
           </p>
           <p>
-            Cautions: If you have this gift, be careful that you don&#39;t
-            stifle the activity of the Holy Spirit in your own life. Good
+            Cautions: If you have this gift, be careful that you don't stifle
+            the activity of the Holy Spirit in your own life. Good
             administrators are willing to make a course change if the leadership
             calls for a shift in plans. This requires a submissive spirit to
-            leadership. There is a danger among administrative people to
-            &quot;use&quot; others to reach a goal. Don&#39;t merely strive for
-            the ends; appreciate what God wants to do through the means.
-            Remember that all people are in a process.
+            leadership. There is a danger among administrative people to "use"
+            others to reach a goal. Don't merely strive for the ends; appreciate
+            what God wants to do through the means. Remember that all people are
+            in a process.
           </p>
         </div>
       ),
@@ -97,11 +95,11 @@ const useCategories = (): Category[] =>
           <p>
             Distinctives: Likened to modern day missionaries, a person with this
             gift has a heart to preach the gospel to people in a different
-            cultural setting who haven&#39;t heard the Gospel. They have a
-            desire to go across cultures and may enjoy starting new churches.
-            &quot;Cross-cultural&quot; work can include inner city or
-            international ministries. The authority of the apostle is based on
-            the Word and the body of believers that sends them out.
+            cultural setting who haven't heard the Gospel. They have a desire to
+            go across cultures and may enjoy starting new churches.
+            "Cross-cultural" work can include inner city or international
+            ministries. The authority of the apostle is based on the Word and
+            the body of believers that sends them out.
           </p>
           <p>
             Cautions: You may desire to cut a new path before you are ready to
@@ -127,11 +125,10 @@ const useCategories = (): Category[] =>
             carpentry, metalworking, and other constructive skills.
           </p>
           <p>
-            Cautions: If you have this gift, don&#39;t belittle your
-            contribution as insignificant or not spiritual because it&#39;s so
-            tangible. Don&#39;t separate your opportunities to personally
-            minister to people from the ministry project that you&#39;re working
-            on.
+            Cautions: If you have this gift, don't belittle your contribution as
+            insignificant or not spiritual because it's so tangible. Don't
+            separate your opportunities to personally minister to people from
+            the ministry project that you're working on.
           </p>
         </div>
       ),
@@ -141,10 +138,10 @@ const useCategories = (): Category[] =>
       description: (
         <div>
           <p>
-            The spiritual capability to communicate God&#39;s truth through a
-            variety of art forms. (The Holy Spirit&#39;s expression is in
-            various forms in the Bible - poetry, song, narrative, parable,
-            metaphor, etc.)
+            The spiritual capability to communicate God's truth through a
+            variety of art forms. (The Holy Spirit's expression is in various
+            forms in the Bible - poetry, song, narrative, parable, metaphor,
+            etc.)
           </p>
           <p>
             Distinctives: A person with this gift is very creative and
@@ -156,17 +153,16 @@ const useCategories = (): Category[] =>
             to attract more people to events.
           </p>
           <p>
-            Cautions: Be careful not to be artsy for art&#39;s sake. Use your
-            gift to promote God and his kingdom, not yourself. Creative
-            communicators stray when they try to create and do things that
-            enamor people with the art form and the artist rather than the
-            message.
+            Cautions: Be careful not to be artsy for art's sake. Use your gift
+            to promote God and his kingdom, not yourself. Creative communicators
+            stray when they try to create and do things that enamor people with
+            the art form and the artist rather than the message.
           </p>
           <p>
             Creative communicators need to be flexible and willing to submit to
-            the wishes of the people around them. Sometimes they aren&#39;t team
+            the wishes of the people around them. Sometimes they aren't team
             players. This is an area that God will address. The fact that you
-            have visible talents where others don&#39;t does not mean you should
+            have visible talents where others don't does not mean you should
             have full say in music, drama, or other artistic areas.
           </p>
         </div>
@@ -179,7 +175,7 @@ const useCategories = (): Category[] =>
           <p>
             The spiritual capability to distinguish between truth and error, and
             to identify deception in character and in relationships. (1
-            Corinthians 12:10, &quot;distinguishing between spirits.&quot;)
+            Corinthians 12:10, "distinguishing between spirits.")
           </p>
           <p>
             Distinctives: Discernment is a keen sense of insight that enables
@@ -192,11 +188,11 @@ const useCategories = (): Category[] =>
           <p>
             Cautions: Many of us have known people that are very discerning and
             perhaps gifted, but what they do with that discernment is far from
-            God&#39;s will. They have great insight, but then take on the role
-            of the Holy Spirit to expose and correct problems in the other
-            person&#39;s life on their own time schedule. If you have this gift,
-            learn to use it skillfully by seeking help from others who are
-            gifted in wisdom, counseling, and shepherding.
+            God's will. They have great insight, but then take on the role of
+            the Holy Spirit to expose and correct problems in the other person's
+            life on their own time schedule. If you have this gift, learn to use
+            it skillfully by seeking help from others who are gifted in wisdom,
+            counseling, and shepherding.
           </p>
         </div>
       ),
@@ -221,25 +217,25 @@ const useCategories = (): Category[] =>
             This person tends to be very positive, full of faith, reassuring to
             the unstable. They also tend to be results-oriented, concerned with
             consistency of practice with profession, very practical and
-            pragmatic (&quot;What works?&quot;). They tend to be expressive and
-            are often viewed as an &quot;emoter&quot; by other people.
-            Encouragers understand the importance of emotions, but are concerned
-            with knowing and doing God&#39;s will as well.
+            pragmatic ("What works?"). They tend to be expressive and are often
+            viewed as an "emoter" by other people. Encouragers understand the
+            importance of emotions, but are concerned with knowing and doing
+            God's will as well.
           </p>
           <p>
             Cautions: If you have this gift, you may tend to make things too
             simple. For example, when someone is hurting, quoting Romans 8:28
-            (&quot;and we know that God causes all things to work together for
-            good to those who love God, to those who are called according to His
-            purpose&quot;) is too simple. This is a great truth but
-            encouragement in a person&#39;s walk at that moment may not be
-            what&#39;s needed. The individual may simply need your company.
+            ("and we know that God causes all things to work together for good
+            to those who love God, to those who are called according to His
+            purpose") is too simple. This is a great truth but encouragement in
+            a person's walk at that moment may not be what's needed. The
+            individual may simply need your company.
           </p>
           <p>
-            Your optimism can make others feel as if you haven&#39;t really
+            Your optimism can make others feel as if you haven't really
             connected; it makes them wonder if you really understand. Take time
-            to learn about what they&#39;re going through before helping to
-            build them up.
+            to learn about what they're going through before helping to build
+            them up.
           </p>
         </div>
       ),
@@ -256,28 +252,27 @@ const useCategories = (): Category[] =>
           <p>
             Distinctives: A person with this gift has a strong desire to turn
             conversations to spiritual matters and has an instinctive ability to
-            do this. The evangelist&#39;s desire to share the Gospel with
+            do this. The evangelist's desire to share the Gospel with
             non-believers is often greater than being involved with the
             grounding and discipleship of believers.
           </p>
           <p>
             All Christians are called to witness to non-believers (1 Peter
-            3:15). The non-gifted &quot;witnesser&quot; will probably see fewer
-            results and be less &quot;at home&quot; sharing the Gospel than a
-            gifted evangelist.
+            3:15). The non-gifted "witnesser" will probably see fewer results
+            and be less "at home" sharing the Gospel than a gifted evangelist.
           </p>
           <p>
             Cautions: Avoid stereotypes (as with all the gifts) as to the
             environment or ministry in which this would be used. Most people
-            won&#39;t be knocking on doors or using cold-medium evangelism.
-            Don&#39;t be satisfied with just one approach. Be willing to read
-            about evangelism and talk with other Christians about their approach
-            so that God can develop your gift, using it in a variety of ways. Be
-            careful that a critical spirit doesn&#39;t emerge because other
-            believers aren&#39;t speaking to three to five people per week -
-            that is gift projection. You can be hard on others when you
-            don&#39;t see them expressing themselves with the same intensity in
-            the areas that you&#39;ve been gifted.
+            won't be knocking on doors or using cold-medium evangelism. Don't be
+            satisfied with just one approach. Be willing to read about
+            evangelism and talk with other Christians about their approach so
+            that God can develop your gift, using it in a variety of ways. Be
+            careful that a critical spirit doesn't emerge because other
+            believers aren't speaking to three to five people per week - that is
+            gift projection. You can be hard on others when you don't see them
+            expressing themselves with the same intensity in the areas that
+            you've been gifted.
           </p>
         </div>
       ),
@@ -287,7 +282,7 @@ const useCategories = (): Category[] =>
       description: (
         <div>
           <p>
-            The spiritual capability to trust God&#39;s will and act on it with
+            The spiritual capability to trust God's will and act on it with
             unwavering belief in His ability. (1 Corinthians 12:9)
           </p>
           <p>
@@ -299,14 +294,13 @@ const useCategories = (): Category[] =>
             working in trials.
           </p>
           <p>
-            Cautions: Remember that faith is active. It isn&#39;t only God&#39;s
-            work; we must be willing to obey His commands. God works through
-            people in reaching the lost and in helping Christians grow. If you
-            have this gift, you might look and critique your group, asking,
-            &quot;Why doesn&#39;t our group have the vitality I read about in
-            Acts 2? Is it because the Spirit is different or absent?&quot;
-            Recognize that God is at work in all churches and that human action
-            does matter.
+            Cautions: Remember that faith is active. It isn't only God's work;
+            we must be willing to obey His commands. God works through people in
+            reaching the lost and in helping Christians grow. If you have this
+            gift, you might look and critique your group, asking, "Why doesn't
+            our group have the vitality I read about in Acts 2? Is it because
+            the Spirit is different or absent?" Recognize that God is at work in
+            all churches and that human action does matter.
           </p>
         </div>
       ),
@@ -329,21 +323,20 @@ const useCategories = (): Category[] =>
             confidence in leadership and a desire to encourage that ministry in
             others and do it with liberality. All Christians are called to give,
             but some are compelled to give much more. The gifted giver is often
-            asking, &quot;How can I free up the most amount of resources to
-            maximize their potential for kingdom use?&quot; Often gifted givers
-            try to help others to see success in their own financial
-            stewardship.
+            asking, "How can I free up the most amount of resources to maximize
+            their potential for kingdom use?" Often gifted givers try to help
+            others to see success in their own financial stewardship.
           </p>
           <p>
             Cautions: If you have this gift, you might not see it as a spiritual
             ministry. Since all Christians are called to give, you may believe
-            that you&#39;re only doing a perfunctory, mandated service. Or you
-            may think that giving money is too tangible to be a spiritual gift.
+            that you're only doing a perfunctory, mandated service. Or you may
+            think that giving money is too tangible to be a spiritual gift.
             Realize that financial resources are necessary in ministry to bring
-            the lost to Christ. Be careful that you don&#39;t inadvertently use
-            resources for &quot;personal agenda&quot; giving within the church.
-            Allow the leadership to dispense those resources as it sees fit. Be
-            a generous giver and stimulate others to give.
+            the lost to Christ. Be careful that you don't inadvertently use
+            resources for "personal agenda" giving within the church. Allow the
+            leadership to dispense those resources as it sees fit. Be a generous
+            giver and stimulate others to give.
           </p>
         </div>
       ),
@@ -359,10 +352,10 @@ const useCategories = (): Category[] =>
           </p>
           <p>
             Distinctives: A person with this gift sees the spiritual value of
-            and finds God&#39;s purposes in the practical aspects of ministry
-            and living. Someone with this gift might help to maintain a facility
-            or assist a teacher with some household task to free him or her up
-            for study.
+            and finds God's purposes in the practical aspects of ministry and
+            living. Someone with this gift might help to maintain a facility or
+            assist a teacher with some household task to free him or her up for
+            study.
           </p>
           <p>
             The gift of helps is a tangible expression of what the non-believing
@@ -401,15 +394,15 @@ const useCategories = (): Category[] =>
             host loves to have people to their home and is more preoccupied with
             the comfort of others than the image of their home. This gift is
             especially needed in a large church. One of the more frequent
-            questions asked by newer people is, &quot;Can a church this size
-            care for me personally?&quot;
+            questions asked by newer people is, "Can a church this size care for
+            me personally?"
           </p>
           <p>
             People with the gift of hospitality can have incredible impact on
             children. As someone with this gift opens up their house for others,
             their children see the value of fellowship and using material
-            blessings as a stewardship for the Lord&#39;s work. Of course this
-            doesn&#39;t mean that they never get time alone with their family at
+            blessings as a stewardship for the Lord's work. Of course this
+            doesn't mean that they never get time alone with their family at
             home.
           </p>
           <p>
@@ -459,9 +452,9 @@ const useCategories = (): Category[] =>
             Distinctives: A person with this gift enjoys studying, doing
             research, and digging for nuggets of truth. They like to assess and
             accumulate information, facts, and data. They are great helpers for
-            teachers and Word-oriented programs. &quot;Word of Knowledge&quot;
-            indicates that they can communicate that truth as well, even if not
-            through a teaching or prophetic gift.
+            teachers and Word-oriented programs. "Word of Knowledge" indicates
+            that they can communicate that truth as well, even if not through a
+            teaching or prophetic gift.
           </p>
           <p>
             Cautions: If you have this gift, watch for a tendency to be
@@ -480,12 +473,12 @@ const useCategories = (): Category[] =>
             direct people to accomplish the work of the ministry. (Romans 12:8)
           </p>
           <p>
-            Distinctives: A person with this gift is a &quot;goal setter&quot;
-            in the church. They often sense the direction in which God wants to
-            move the body of Christ. They can then motivate people to move in
-            that direction. Gifted leaders think about and communicate the
-            potential they see in other people. This gift is needed in any
-            effective ministry.
+            Distinctives: A person with this gift is a "goal setter" in the
+            church. They often sense the direction in which God wants to move
+            the body of Christ. They can then motivate people to move in that
+            direction. Gifted leaders think about and communicate the potential
+            they see in other people. This gift is needed in any effective
+            ministry.
           </p>
           <p>
             Cautions: Realize that good relationships give leaders credibility.
@@ -494,11 +487,11 @@ const useCategories = (): Category[] =>
             your own concoction. This gift will be proven over time; there needs
             to be proven faithfulness here. Leaders need the ability to keep
             moving in the face of put-downs and doubt. Because this is a very
-            visible gift with lots of feedback being given, you&#39;ll have to
-            be keenly aware of your motivations for service. You will be tested
-            in this area through success as well as failure. God will want to
-            help you become consistent and diligent in either situation, relying
-            on Him. There may be a strong tendency to draw people to you rather
+            visible gift with lots of feedback being given, you'll have to be
+            keenly aware of your motivations for service. You will be tested in
+            this area through success as well as failure. God will want to help
+            you become consistent and diligent in either situation, relying on
+            Him. There may be a strong tendency to draw people to you rather
             than to God. Remember that all have a sphere of influence and you
             can take a leadership position without this gift.
           </p>
@@ -517,34 +510,33 @@ const useCategories = (): Category[] =>
             Distinctives: A person with this gift enjoys serving alongside
             hurting people. They have a strong desire to remove the pain or
             discomfort in the lives of others while at the same time remaining
-            strong in their own faith. If this gift isn&#39;t exhibited in the
-            body, we&#39;re missing a key part of the heart of God.
+            strong in their own faith. If this gift isn't exhibited in the body,
+            we're missing a key part of the heart of God.
           </p>
           <p>
             This is different than compassion (a heart for hurting people).
             Mercy requires coming alongside people on a regular basis, feeling
             that pain and directing it toward godly action to alleviate that
             pain. They often work well alongside a prophet whom God has used to
-            expose sin and pain in someone&#39;s life. The person with mercy
-            comes next to that person, empathizing deeply with the pain, but
-            offering God&#39;s solution for healing.
+            expose sin and pain in someone's life. The person with mercy comes
+            next to that person, empathizing deeply with the pain, but offering
+            God's solution for healing.
           </p>
           <p>
             Cautions: If you have this gift, you probably have a strong
             emotional component to your relational skills. Often though, when
             your emotional skills are strong, it is less natural to offer
-            direction and truth based on God&#39;s word.
+            direction and truth based on God's word.
           </p>
           <p>
             You may fail to recognize the benefits that difficult times can
-            bring to a person&#39;s life. For example, you may overlook how God
-            is using a situation to bring about repentance or restitution. If
-            you act too quickly you may short-circuit what God is trying to do.
+            bring to a person's life. For example, you may overlook how God is
+            using a situation to bring about repentance or restitution. If you
+            act too quickly you may short-circuit what God is trying to do.
           </p>
           <p>
-            Be careful you don&#39;t become so overwhelmed with others&#39;
-            problems that you don&#39;t take care of your own personal
-            obligations.
+            Be careful you don't become so overwhelmed with others' problems
+            that you don't take care of your own personal obligations.
           </p>
         </div>
       ),
@@ -554,7 +546,7 @@ const useCategories = (): Category[] =>
       description: (
         <div>
           <p>
-            The spiritual capability to proclaim God&#39;s truth with power and
+            The spiritual capability to proclaim God's truth with power and
             clarity in a timely and culturally sensitive fashion for correction,
             repentance, or edification. (Romans 12:6; 1 Corinthians 12:10, 28;
             Ephesians 4:11)
@@ -563,25 +555,25 @@ const useCategories = (): Category[] =>
             Distinctives: A person with this gift has an amazing ability to
             understand biblical truth, to apply it to the events and nuances of
             culture, and to expose the culture in its deception. They may seem
-            like they aren&#39;t really compassionate - &quot;they just say the
-            truth and let the chips fall where they may.&quot; When they are
-            effective, others often feel uncomfortable because God convicts them
-            through the person with this gift. They are discerning, expressive,
-            desire time alone (to get clarity), opinionated, and authoritative.
-            They often see and articulate what many are oblivious to, or see
-            only dimly. Those with the gift of prophecy express themselves in
-            many ways: speaking publicly, sharing in Home Church, or
-            communicating one-on-one.
+            like they aren't really compassionate - "they just say the truth and
+            let the chips fall where they may." When they are effective, others
+            often feel uncomfortable because God convicts them through the
+            person with this gift. They are discerning, expressive, desire time
+            alone (to get clarity), opinionated, and authoritative. They often
+            see and articulate what many are oblivious to, or see only dimly.
+            Those with the gift of prophecy express themselves in many ways:
+            speaking publicly, sharing in Home Church, or communicating
+            one-on-one.
           </p>
           <p>
             Cautions: Beware of lacking compassion. Your commitment to speak the
             truth may be so strong that you forget to say it with love
             (Ephesians 4:15, 1 Corinthians 13, Romans 12:9ff., 1 Peter 4:8). You
-            can discourage people if you&#39;re not careful. Nonetheless,
-            remember that the purpose of your gift is to console, encourage,
-            exhort (1Corinthians14:3), even if others may become uncomfortable.
-            Also beware of pride and thinking you&#39;re the only one who sees
-            things the way they really are.
+            can discourage people if you're not careful. Nonetheless, remember
+            that the purpose of your gift is to console, encourage, exhort
+            (1Corinthians14:3), even if others may become uncomfortable. Also
+            beware of pride and thinking you're the only one who sees things the
+            way they really are.
           </p>
         </div>
       ),
@@ -605,14 +597,14 @@ const useCategories = (): Category[] =>
             shepherds are a good balance for the gifted administrator or leader.
           </p>
           <p>
-            Cautions: If you have this gift, don&#39;t use your oversight and
+            Cautions: If you have this gift, don't use your oversight and
             concern to shield people from real-life experiences. Also, be
             careful to not view people as projects. Shepherds often have a clear
-            vision for someone&#39;s growth. Don&#39;t impose your concerns and
-            vision on someone else. Allow room for the Holy Spirit to convict
-            and move them. The process remains between them and God. Remember
-            that it is God that causes the growth; don&#39;t take responsibility
-            for their problems.
+            vision for someone's growth. Don't impose your concerns and vision
+            on someone else. Allow room for the Holy Spirit to convict and move
+            them. The process remains between them and God. Remember that it is
+            God that causes the growth; don't take responsibility for their
+            problems.
           </p>
         </div>
       ),
@@ -647,16 +639,15 @@ const useCategories = (): Category[] =>
           </p>
           <p>
             If you find out that this may be where you are gifted, realize that
-            doesn&#39;t qualify you to present at Central Teaching or even Home
+            doesn't qualify you to present at Central Teaching or even Home
             Church tomorrow. A teaching gift takes time to develop. Choose a
             ministry that you are interested in, get involved, and pray for
             opportunities for your gifting to be used.
           </p>
           <p>
-            Watch out for self-promotion. You may hear yourself think,
-            &quot;They ought to put me up to teach!&quot; You may feel anger or
-            resentment that you haven&#39;t been asked to teach yet or teach
-            often enough.
+            Watch out for self-promotion. You may hear yourself think, "They
+            ought to put me up to teach!" You may feel anger or resentment that
+            you haven't been asked to teach yet or teach often enough.
           </p>
         </div>
       ),
