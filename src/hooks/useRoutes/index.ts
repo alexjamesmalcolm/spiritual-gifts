@@ -11,7 +11,7 @@ const QuestionSection = lazy(() => import("pages/QuestionSection"));
 
 const useRoutes = (): Route[] => [
   { path: "/", Component: Homepage },
-  { path: "/result", Component: Results },
+  { path: "/result/:compressedResults", Component: Results },
   { path: "/question-set/:questionSetNumber", Component: QuestionSection },
 ];
 
