@@ -215,7 +215,7 @@ const useCategories = (): Category[] =>
               <p>
                 The spiritual capability to reassure, strengthen, and affirm
                 those who are discouraged or wavering in their faith. (Romans
-                12: 8)
+                12:8)
               </p>
               <p>
                 Distinctives: A person with this gift urges others to apply the
@@ -326,7 +326,7 @@ const useCategories = (): Category[] =>
               <p>
                 The spiritual capability to contribute money and material
                 resources to the work of the Lord with cheerfulness and
-                liberality. (Romans 12: 8)
+                liberality. (Romans 12:8)
               </p>
               <p>
                 Distinctives: God has given the person with this gift the
