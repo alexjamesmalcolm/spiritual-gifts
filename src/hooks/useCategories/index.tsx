@@ -95,7 +95,7 @@ const useCategories = (): Category[] =>
             <div>
               <p>
                 The spiritual capability to start churches and oversee their
-                development. (1Corinthians 12:28; Ephesians 4:11)
+                development. (1 Corinthians 12:28; Ephesians 4:11)
               </p>
               <p>
                 Distinctives: Likened to modern day missionaries, a person with
@@ -364,7 +364,7 @@ const useCategories = (): Category[] =>
               <p>
                 The spiritual ability to attach spiritual value to the
                 accomplishment of practical and necessary tasks which support
-                the body of Christ. (Romans 12:7; 1Corinthians 12:28)
+                the body of Christ. (Romans 12:7; 1 Corinthians 12:28)
               </p>
               <p>
                 Distinctives: A person with this gift sees the spiritual value
@@ -593,7 +593,7 @@ const useCategories = (): Category[] =>
                 (Ephesians 4:15, 1 Corinthians 13, Romans 12:9ff., 1 Peter 4:8).
                 You can discourage people if you're not careful. Nonetheless,
                 remember that the purpose of your gift is to console, encourage,
-                exhort (1Corinthians14:3), even if others may become
+                exhort (1 Corinthians14:3), even if others may become
                 uncomfortable. Also beware of pride and thinking you're the only
                 one who sees things the way they really are.
               </p>
