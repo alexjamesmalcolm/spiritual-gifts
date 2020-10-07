@@ -5,6 +5,7 @@ import useQuestionSet from "hooks/useQuestionSet";
 import classNames from "classnames";
 import styles from "./QuestionSection.module.css";
 import { questionsPerPage, setsOfQuestions } from "utils/constants";
+import SubmitAssessmentLink from "./components/SubmitAssessmentLink";
 
 const PaginationControls = () => {
   const params: { questionSetNumber: string } = useParams();
@@ -40,7 +41,7 @@ const PaginationControls = () => {
         {isAbleToGoForwards && (
           <Link to={`/question-set/${questionSetNumber + 1}`}>Next</Link>
         )}
-        {isAbleToFinish && <Link to="/result">Finish</Link>}
+        {isAbleToFinish && <SubmitAssessmentLink />}
       </div>
       {unansweredQuestionsFromPreviousPages.length > 0 && (
         <div className={styles.unansweredQuestions}>
