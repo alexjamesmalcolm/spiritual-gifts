@@ -42,5 +42,11 @@
 }
 
 .linkDescription {
-  margin: 0;
+  margin: 0.2rem 1rem;
+}
+
+.resultsLink {
+  font-size: 0.7rem;
+  max-width: calc(100% - 2rem);
+  overflow-wrap: anywhere;
 }

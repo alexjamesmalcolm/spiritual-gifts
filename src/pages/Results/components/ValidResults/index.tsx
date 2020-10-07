@@ -8,10 +8,10 @@ const ValidResults = ({ results }: { results: Result[] }) => (
   <div className={styles.container}>
     <h2>Results</h2>
     <p className={styles.linkDescription}>
-      Bookmark the link below if you want to revisit these results.
+      Bookmark this page if you want to revisit or share your results.
     </p>
-    <a href={window.location.href}>
-      <pre>{window.location.href}</pre>
+    <a className={styles.resultsLink} href={window.location.href}>
+      {window.location.href}
     </a>
     <div className={styles.resultsContainer}>
       <p className={classNames(styles.header, styles.name)}>NAME</p>
