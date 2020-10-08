@@ -28,15 +28,57 @@ export interface Category {
   shortName: string;
 }
 
+interface Common {
+  version: string;
+  type: string;
+  direction: string;
+}
+
+interface ChapterContent {
+  [key: number]: {
+    verse: string;
+    verse_nr: number;
+  };
+}
+
+interface Chapter extends Common {
+  type: "chapter";
+  book_name: string;
+  book_nr: number;
+  chapter_nr: number;
+  chapter: ChapterContent;
+}
+
+interface Book {
+  book_name: string;
+  book_nr: string;
+  book_ref: string;
+  chapter_nr: string;
+  chapter: ChapterContent;
+}
+
+interface Verse extends Common {
+  type: "verse";
+  book: Book[];
+}
+
 const Verse = ({ verse }) => {
   const getResource = useCallback(
     () =>
-      fetch(`/verse/json?p=${verse}&v=asv`)
+      fetch(`/verse/json?p=${verse.replaceAll(" ", "")}&v=asv`)
         .then((response) => response.text())
         .then((text) => JSON.parse(text.slice(1, -2))),
     [verse]
   );
-  const { data, isLoading, error } = useResource(verse, { getResource });
+  const {
+    data,
+    isLoading,
+    error,
+  }: {
+    data: Chapter | Verse;
+    isLoading: boolean;
+    error: Error | false;
+  } = useResource(verse, { getResource });
   console.log(data);
   return (
     <a
