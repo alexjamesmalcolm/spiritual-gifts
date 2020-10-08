@@ -75,16 +75,28 @@ const Verse = ({ verse }) => {
     isLoading,
     error,
   }: {
-    data: Chapter | Verse;
+    data: Chapter | Verse | undefined | null;
     isLoading: boolean;
     error: Error | false;
   } = useResource(verse, { getResource });
-  console.log(data);
+  const verseContent = useMemo<string>(() => {
+    if (isLoading || !data || error) {
+      return "";
+    }
+    if (data.type === "chapter") {
+      debugger;
+    } else if (data.type === "verse") {
+      debugger;
+    }
+    console.warn(`type is not accounted for: ${data.type}`);
+    return "";
+  }, [data, error, isLoading]);
   return (
     <a
       href={`https://www.biblegateway.com/passage/?search=${verse}&version=NIV`}
       rel="noreferrer noopener"
       target="_blank"
+      title={verseContent}
     >
       {verse}
     </a>
