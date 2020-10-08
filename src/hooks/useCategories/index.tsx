@@ -1,4 +1,5 @@
-import React, { useMemo } from "react";
+import useResource from "@alexjamesmalcolm/use-resource";
+import React, { useCallback, useMemo } from "react";
 
 export type CategoryName =
   | "Wisdom"
@@ -27,11 +28,29 @@ export interface Category {
   shortName: string;
 }
 
-const ExternalLink = ({ href, children }) => (
-  <a href={href} rel="noreferrer noopener" target="_blank">
-    {children}
-  </a>
-);
+const Verse = ({ verse }) => {
+  const getResource = useCallback(
+    () =>
+      fetch(`/verse/json?p=${verse}&v=asv`)
+        .then((response) => response.text())
+        .then((text) => {
+          debugger;
+          return text;
+        }),
+    [verse]
+  );
+  const { data, isLoading, error } = useResource(verse, { getResource });
+  console.log(data);
+  return (
+    <a
+      href={`https://www.biblegateway.com/passage/?search=${verse}&version=NIV`}
+      rel="noreferrer noopener"
+      target="_blank"
+    >
+      {verse}
+    </a>
+  );
+};
 
 const useCategories = (): Category[] =>
   useMemo<Category[]>(
@@ -43,11 +62,7 @@ const useCategories = (): Category[] =>
             <div>
               <p>
                 The spiritual capability to apply spiritual knowledge
-                effectively. (
-                <abbr title="To one there is given through the Spirit a message of wisdom, to another a message of knowledge by means of the same Spirit,">
-                  1 Corinthians 12:8
-                </abbr>
-                )
+                effectively. (<Verse verse="1 Corinthians 12:8" />)
               </p>
               <p>
                 Distinctives: A person with this gift enjoys skillfully applying
@@ -72,11 +87,7 @@ const useCategories = (): Category[] =>
                 The spiritual capability to understand what makes an
                 organization function, and the special ability to plan and
                 execute procedures that increase the church's organizational
-                effectiveness. (
-                <abbr title="And God has placed in the church first of all apostles, second prophets, third teachers, then miracles, then gifts of healing, of helping, of guidance, and of different kinds of tongues.">
-                  1 Corinthians 12:28
-                </abbr>
-                )
+                effectiveness. (<Verse verse="1 Corinthians 12:28" />)
               </p>
               <p>
                 Distinctives: A person with this gift understands the practical
@@ -109,15 +120,8 @@ const useCategories = (): Category[] =>
             <div>
               <p>
                 The spiritual capability to start churches and oversee their
-                development. (
-                <abbr title="And God has placed in the church first of all apostles, second prophets, third teachers, then miracles, then gifts of healing, of helping, of guidance, and of different kinds of tongues.">
-                  1 Corinthians 12:28
-                </abbr>
-                ;{" "}
-                <abbr title="So Christ himself gave the apostles, the prophets, the evangelists, the pastors and teachers,">
-                  Ephesians 4:11
-                </abbr>
-                )
+                development. (<Verse verse="1 Corinthians 12:28" />;{" "}
+                <Verse verse="Ephesians 4:11" />)
               </p>
               <p>
                 Distinctives: Likened to modern day missionaries, a person with
@@ -144,10 +148,7 @@ const useCategories = (): Category[] =>
               <p>
                 The spiritual capability to enhance ministry through the
                 creative construction of necessary tools for ministry. (
-                <ExternalLink href="https://www.biblegateway.com/passage/?search=Exodus+31">
-                  Exodus 31
-                </ExternalLink>
-                )
+                <Verse verse="Exodus 31" />)
               </p>
               <p>
                 Distinctives: A person with this gift is a hands-on person. He
@@ -210,10 +211,8 @@ const useCategories = (): Category[] =>
               <p>
                 The spiritual capability to distinguish between truth and error,
                 and to identify deception in character and in relationships. (
-                <abbr title="to another miraculous powers, to another prophecy, to another distinguishing between spirits, to another speaking in different kinds of tongues,[a] and to still another the interpretation of tongues.">
-                  1 Corinthians 12:10
-                </abbr>
-                , "distinguishing between spirits.")
+                <Verse verse="1 Corinthians 12:10" />, "distinguishing between
+                spirits.")
               </p>
               <p>
                 Distinctives: Discernment is a keen sense of insight that
@@ -243,10 +242,7 @@ const useCategories = (): Category[] =>
               <p>
                 The spiritual capability to reassure, strengthen, and affirm
                 those who are discouraged or wavering in their faith. (
-                <abbr title="if it is to encourage, then give encouragement; if it is giving, then give generously; if it is to lead, do it diligently; if it is to show mercy, do it cheerfully.">
-                  Romans 12:8
-                </abbr>
-                )
+                <Verse verse="Romans 12:8" />)
               </p>
               <p>
                 Distinctives: A person with this gift urges others to apply the
@@ -268,9 +264,7 @@ const useCategories = (): Category[] =>
               <p>
                 Cautions: If you have this gift, you may tend to make things too
                 simple. For example, when someone is hurting, quoting{" "}
-                <abbr title="And we know that in all things God works for the good of those who love him, who have been called according to his purpose.">
-                  Romans 8:28
-                </abbr>{" "}
+                <Verse verse="Romans 8:28" />
                 ("and we know that God causes all things to work together for
                 good to those who love God, to those who are called according to
                 His purpose") is too simple. This is a great truth but
@@ -293,11 +287,7 @@ const useCategories = (): Category[] =>
               <p>
                 The spiritual capability to effectively communicate the message
                 of Christ to non-Christians so they can respond in faith and
-                move toward discipleship. (
-                <abbr title="So Christ himself gave the apostles, the prophets, the evangelists, the pastors and teachers,">
-                  Ephesians 4:11
-                </abbr>
-                )
+                move toward discipleship. (<Verse verse="Ephesians 4:11" />)
               </p>
               <p>
                 Distinctives: A person with this gift has a strong desire to
@@ -308,9 +298,7 @@ const useCategories = (): Category[] =>
               </p>
               <p>
                 All Christians are called to witness to non-believers (
-                <abbr title="But in your hearts revere Christ as Lord. Always be prepared to give an answer to everyone who asks you to give the reason for the hope that you have. But do this with gentleness and respect,">
-                  1 Peter 3:15
-                </abbr>
+                <Verse verse="1 Peter 3:15" />
                 ). The non-gifted "witnesser" will probably see fewer results
                 and be less "at home" sharing the Gospel than a gifted
                 evangelist.
@@ -338,10 +326,7 @@ const useCategories = (): Category[] =>
               <p>
                 The spiritual capability to trust God's will and act on it with
                 unwavering belief in His ability. (
-                <abbr title="to another faith by the same Spirit, to another gifts of healing by that one Spirit,">
-                  1 Corinthians 12:9
-                </abbr>
-                )
+                <Verse verse="1 Corinthians 12:9" />)
               </p>
               <p>
                 Distinctives: This gift is often expressed in a strong prayer
@@ -357,12 +342,9 @@ const useCategories = (): Category[] =>
                 people in reaching the lost and in helping Christians grow. If
                 you have this gift, you might look and critique your group,
                 asking, "Why doesn't our group have the vitality I read about in{" "}
-                <ExternalLink href="https://www.biblegateway.com/passage/?search=Acts+2">
-                  Acts 2
-                </ExternalLink>
-                ? Is it because the Spirit is different or absent?" Recognize
-                that God is at work in all churches and that human action does
-                matter.
+                <Verse verse="Acts 2" />? Is it because the Spirit is different
+                or absent?" Recognize that God is at work in all churches and
+                that human action does matter.
               </p>
             </div>
           ),
@@ -374,11 +356,7 @@ const useCategories = (): Category[] =>
               <p>
                 The spiritual capability to contribute money and material
                 resources to the work of the Lord with cheerfulness and
-                liberality. (
-                <abbr title="if it is to encourage, then give encouragement; if it is giving, then give generously; if it is to lead, do it diligently; if it is to show mercy, do it cheerfully.">
-                  Romans 12:8
-                </abbr>
-                )
+                liberality. (<Verse verse="Romans 12:8" />)
               </p>
               <p>
                 Distinctives: God has given the person with this gift the
@@ -416,15 +394,8 @@ const useCategories = (): Category[] =>
               <p>
                 The spiritual ability to attach spiritual value to the
                 accomplishment of practical and necessary tasks which support
-                the body of Christ. (
-                <abbr title="if it is serving, then serve; if it is teaching, then teach;">
-                  Romans 12:7
-                </abbr>
-                ;{" "}
-                <abbr title="And God has placed in the church first of all apostles, second prophets, third teachers, then miracles, then gifts of healing, of helping, of guidance, and of different kinds of tongues.">
-                  1 Corinthians 12:28
-                </abbr>
-                )
+                the body of Christ. (<Verse verse="Romans 12:7" />;{" "}
+                <Verse verse="1 Corinthians 12:28" />)
               </p>
               <p>
                 Distinctives: A person with this gift sees the spiritual value
@@ -461,10 +432,7 @@ const useCategories = (): Category[] =>
               <p>
                 The spiritual capability to personally care for people by
                 providing fellowship, food, or shelter. (
-                <abbr title="Offer hospitality to one another without grumbling.">
-                  1 Peter 4:9
-                </abbr>
-                )
+                <Verse verse="1 Peter 4:9" />)
               </p>
               <p>
                 Distinctives: A person with this gift enjoys providing a caring,
@@ -503,13 +471,7 @@ const useCategories = (): Category[] =>
               <p>
                 The divine enablement to consistently pray on behalf of and for
                 others, seeing frequent and specific results. (
-                <abbr title="In the same way, the Spirit helps us in our weakness. We do not know what we ought to pray for, but the Spirit himself intercedes for us through wordless groans. And he who searches our hearts knows the mind of the Spirit, because the Spirit intercedes for God’s people in accordance with the will of God.">
-                  Romans 8:26-27
-                </abbr>
-                ;{" "}
-                <ExternalLink href="https://www.biblegateway.com/passage/?search=John+17%3A9-26">
-                  John 17:9-26
-                </ExternalLink>
+                <Verse verse="Romans 8:26-27" />; <Verse verse="John 17:9-26" />
                 )
               </p>
               <p>
@@ -535,11 +497,7 @@ const useCategories = (): Category[] =>
             <div>
               <p>
                 The divine empowerment to accumulate and analyze information
-                effectively. (
-                <abbr title="To one there is given through the Spirit a message of wisdom, to another a message of knowledge by means of the same Spirit,">
-                  1 Corinthians 12:8
-                </abbr>
-                )
+                effectively. (<Verse verse="1 Corinthians 12:8" />)
               </p>
               <p>
                 Distinctives: A person with this gift enjoys studying, doing
@@ -564,10 +522,7 @@ const useCategories = (): Category[] =>
               <p>
                 The spiritual capability to instill vision, to motivate, and to
                 direct people to accomplish the work of the ministry. (
-                <abbr title="if it is to encourage, then give encouragement; if it is giving, then give generously; if it is to lead, do it diligently; if it is to show mercy, do it cheerfully.">
-                  Romans 12:8
-                </abbr>
-                )
+                <Verse verse="Romans 12:8" />)
               </p>
               <p>
                 Distinctives: A person with this gift is a "goal setter" in the
@@ -603,10 +558,7 @@ const useCategories = (): Category[] =>
               <p>
                 The spiritual capability to minister cheerfully and
                 appropriately to people who are suffering. (
-                <abbr title="if it is to encourage, then give encouragement; if it is giving, then give generously; if it is to lead, do it diligently; if it is to show mercy, do it cheerfully.">
-                  Romans 12:8
-                </abbr>
-                )
+                <Verse verse="Romans 12:8" />)
               </p>
               <p>
                 Distinctives: A person with this gift enjoys serving alongside
@@ -653,18 +605,9 @@ const useCategories = (): Category[] =>
                 The spiritual capability to proclaim God's truth with power and
                 clarity in a timely and culturally sensitive fashion for
                 correction, repentance, or edification. (
-                <abbr title="We have different gifts, according to the grace given to each of us. If your gift is prophesying, then prophesy in accordance with your faith;">
-                  Romans 12:6
-                </abbr>
-                ;{" "}
-                <abbr title="to another miraculous powers, to another prophecy, to another distinguishing between spirits, to another speaking in different kinds of tongues, and to still another the interpretation of tongues. And God has placed in the church first of all apostles, second prophets, third teachers, then miracles, then gifts of healing, of helping, of guidance, and of different kinds of tongues.">
-                  1 Corinthians 12:10, 28
-                </abbr>
-                ;{" "}
-                <abbr title="So Christ himself gave the apostles, the prophets, the evangelists, the pastors and teachers">
-                  Ephesians 4:11
-                </abbr>
-                )
+                <Verse verse="Romans 12:6" />;{" "}
+                <Verse verse="1 Corinthians 12:10, 28" />;{" "}
+                <Verse verse="Ephesians 4:11" />)
               </p>
               <p>
                 Distinctives: A person with this gift has an amazing ability to
@@ -683,27 +626,12 @@ const useCategories = (): Category[] =>
               <p>
                 Cautions: Beware of lacking compassion. Your commitment to speak
                 the truth may be so strong that you forget to say it with love (
-                <abbr title="Instead, speaking the truth in love, we will grow to become in every respect the mature body of him who is the head, that is, Christ.">
-                  Ephesians 4:15
-                </abbr>
-                ,{" "}
-                <ExternalLink href="https://www.biblegateway.com/passage/?search=1+Corinthians+13">
-                  1 Corinthians 13
-                </ExternalLink>
-                ,{" "}
-                <ExternalLink href="https://www.biblegateway.com/passage/?search=Romans+12%3A9ff">
-                  Romans 12:9ff
-                </ExternalLink>
-                .,{" "}
-                <abbr title="Above all, love each other deeply, because love covers over a multitude of sins.">
-                  1 Peter 4:8
-                </abbr>
+                <Verse verse="Ephesians 4:15" />,{" "}
+                <Verse verse="1 Corinthians 13" />,{" "}
+                <Verse verse="Romans 12:9ff" />, <Verse verse="1 Peter 4:8" />
                 ). You can discourage people if you're not careful. Nonetheless,
                 remember that the purpose of your gift is to console, encourage,
-                exhort (
-                <abbr title="But the one who prophesies speaks to people for their strengthening, encouraging and comfort.">
-                  1 Corinthians 14:3
-                </abbr>
+                exhort (<Verse verse="1 Corinthians 14:3" />
                 ), even if others may become uncomfortable. Also beware of pride
                 and thinking you're the only one who sees things the way they
                 really are.
@@ -718,11 +646,7 @@ const useCategories = (): Category[] =>
               <p>
                 The spiritual capability to guide, care for, and nurture
                 individuals or groups in the body of Christ as they grow in
-                faith. (
-                <abbr title="So Christ himself gave the apostles, the prophets, the evangelists, the pastors and teachers,">
-                  Ephesians 4:11
-                </abbr>
-                )
+                faith. (<Verse verse="Ephesians 4:11" />)
               </p>
               <p>
                 Distinctives: A person with this gift provides oversight. They
@@ -754,18 +678,9 @@ const useCategories = (): Category[] =>
               <p>
                 The spiritual capability to understand, clearly explain, and
                 apply the Word of God to the lives of listeners. (
-                <abbr title="if it is serving, then serve; if it is teaching, then teach;">
-                  Romans 12:7
-                </abbr>
-                ;{" "}
-                <abbr title="And God has placed in the church first of all apostles, second prophets, third teachers, then miracles, then gifts of healing, of helping, of guidance, and of different kinds of tongues.">
-                  1 Corinthians 12:28
-                </abbr>
-                ;{" "}
-                <abbr title="So Christ himself gave the apostles, the prophets, the evangelists, the pastors and teachers,">
-                  Ephesians 4:11
-                </abbr>
-                )
+                <Verse verse="Romans 12:7" />;{" "}
+                <Verse verse="1 Corinthians 12:28" />;{" "}
+                <Verse verse="Ephesians 4:11" />)
               </p>
               <p>
                 Distinctives: Teachers have a real thirst for knowledge and have

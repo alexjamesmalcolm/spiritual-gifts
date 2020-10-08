@@ -1,9 +1,17 @@
-import { configureStore, ThunkAction, Action } from "@reduxjs/toolkit";
+import {
+  configureStore,
+  ThunkAction,
+  Action,
+  AnyAction,
+  Reducer,
+} from "@reduxjs/toolkit";
 import answersReducer from "hooks/useAnswers/reducer";
+import { reducer as useResourceReducer } from "@alexjamesmalcolm/use-resource";
 
 export const store = configureStore({
   reducer: {
     answers: answersReducer,
+    useResource: (useResourceReducer as unknown) as Reducer<{}, AnyAction>,
   },
 });
 
