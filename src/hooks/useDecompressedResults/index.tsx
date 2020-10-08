@@ -17,7 +17,6 @@ const useDecompressedResults = (): Result[] | undefined => {
         ) as { [key: string]: number }
       )
         .map(([shortName, score]) => {
-          console.log(shortName, score);
           const category = categories.find(
             (category) => category.shortName === shortName
           ) || {
