@@ -1,5 +1,4 @@
-import useResource from "@alexjamesmalcolm/use-resource";
-import React, { useCallback, useMemo } from "react";
+import React, { useMemo } from "react";
 
 export type CategoryName =
   | "Wisdom"
