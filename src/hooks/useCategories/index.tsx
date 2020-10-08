@@ -65,7 +65,7 @@ interface Verse extends Common {
 const Verse = ({ verse }) => {
   const getResource = useCallback(
     () =>
-      fetch(`/verse/json?p=${verse.replaceAll(" ", "")}&v=asv`)
+      fetch(`/verse/json?p=${verse.replaceAll(" ", "")}&v=weymouth`)
         .then((response) => response.text())
         .then((text) => JSON.parse(text.slice(1, -2))),
     [verse]
@@ -96,7 +96,7 @@ const Verse = ({ verse }) => {
   }, [data, error, isLoading]);
   return (
     <a
-      href={`https://www.biblegateway.com/passage/?search=${verse}&version=NIV`}
+      href={`https://www.biblegateway.com/passage/?search=${verse}&version=NASB`}
       rel="noreferrer noopener"
       target="_blank"
       title={verseContent}
