@@ -85,8 +85,12 @@ const Verse = ({ verse }) => {
     }
     if (data.type === "chapter") {
       debugger;
+      const thing = Object.entries(data.chapter);
+      console.log(thing);
     } else if (data.type === "verse") {
       debugger;
+      const thing = data.book.map((book) => Object.entries(book.chapter));
+      console.log(thing);
     }
     console.warn(`type is not accounted for: ${data.type}`);
     return "";
