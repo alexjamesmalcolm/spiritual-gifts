@@ -84,15 +84,14 @@ const Verse = ({ verse }) => {
       return "";
     }
     if (data.type === "chapter") {
-      debugger;
-      const thing = Object.entries(data.chapter);
-      console.log(thing);
+      return (Object.entries(data.chapter).map(
+        ([, { verse }]) => verse
+      ) as string[]).join("");
     } else if (data.type === "verse") {
-      debugger;
-      const thing = data.book.map((book) => Object.entries(book.chapter));
-      console.log(thing);
+      return (data.book
+        .flatMap((book) => Object.entries(book.chapter))
+        .map(([, { verse }]) => verse) as string[]).join("");
     }
-    console.warn(`type is not accounted for: ${data.type}`);
     return "";
   }, [data, error, isLoading]);
   return (
