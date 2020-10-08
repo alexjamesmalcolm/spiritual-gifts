@@ -38,7 +38,7 @@ interface Verse extends Common {
 const useVerse = (verse: string) => {
   const getResource = useCallback(
     () =>
-      fetch(`/verse/json?p=${verse.replaceAll(" ", "")}&v=weymouth`)
+      fetch(`/verse/json?p=${verse}&v=weymouth`)
         .then((response) => response.text())
         .then((text) => JSON.parse(text.slice(1, -2))),
     [verse]
