@@ -33,10 +33,7 @@ const Verse = ({ verse }) => {
     () =>
       fetch(`/verse/json?p=${verse}&v=asv`)
         .then((response) => response.text())
-        .then((text) => {
-          debugger;
-          return text;
-        }),
+        .then((text) => JSON.parse(text.slice(1, -2))),
     [verse]
   );
   const { data, isLoading, error } = useResource(verse, { getResource });
