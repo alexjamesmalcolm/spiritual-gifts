@@ -5,6 +5,7 @@
   margin: auto;
   height: 100vh;
   justify-content: flex-start;
+  padding: 0 0.5rem;
 }
 
 .container h1 {
