@@ -7,6 +7,10 @@
   justify-content: flex-start;
 }
 
+.container h1 {
+  text-align: center;
+}
+
 .footer {
   margin-top: auto;
   margin-bottom: 1rem;
