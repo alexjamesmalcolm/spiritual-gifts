@@ -48,5 +48,5 @@
 .resultsLink {
   font-size: 0.7rem;
   max-width: calc(100% - 2rem);
-  overflow-wrap: anywhere;
+  overflow-wrap: break-word;
 }
