@@ -6,6 +6,7 @@
   height: 100vh;
   justify-content: flex-start;
   padding: 0 0.5rem;
+  max-width: 600px;
 }
 
 .container h1 {
@@ -23,10 +24,4 @@
   grid-auto-columns: max-content;
   gap: 2rem;
   justify-content: center;
-}
-
-@media (min-width: 600px) {
-  .container {
-    width: 600px;
-  }
 }
