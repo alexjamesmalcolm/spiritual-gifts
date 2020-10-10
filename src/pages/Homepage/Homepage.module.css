@@ -5,6 +5,11 @@
   margin: auto;
   height: 100vh;
   justify-content: flex-start;
+  padding: 0 0.5rem;
+}
+
+.container h1 {
+  text-align: center;
 }
 
 .footer {
@@ -18,14 +23,6 @@
   grid-auto-columns: max-content;
   gap: 2rem;
   justify-content: center;
-}
-
-@media (max-width: 320px) {
-  .container {
-    font-size: 24px;
-    margin: 0 5px;
-    align-items: center;
-  }
 }
 
 @media (min-width: 600px) {
