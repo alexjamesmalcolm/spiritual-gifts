@@ -17,6 +17,12 @@
       "sizes": "682x682",
       "type": "image/png",
       "purpose": "maskable"
+    },
+    {
+      "src": "/monochrome.png",
+      "sizes": "682x682",
+      "type": "image/png",
+      "purpose": "monochrome"
     }
   ],
   "theme_color": "#ffffff",
