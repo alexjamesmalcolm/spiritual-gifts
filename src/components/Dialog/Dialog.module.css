@@ -3,3 +3,18 @@
   left: auto;
   right: 1rem;
 }
+
+dialog {
+  display: block;
+  position: absolute;
+  left: 0px;
+  right: 0px;
+  width: -webkit-fit-content;
+  height: -webkit-fit-content;
+  margin: auto;
+  border-width: initial;
+  border-style: solid;
+  border-color: initial;
+  border-image: initial;
+  padding: 1em;
+}

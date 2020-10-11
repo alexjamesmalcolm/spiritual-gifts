@@ -23,12 +23,13 @@ const Dialog = ({
     }
   }, [duration, handleClose]);
   return useMemo(
-    () => (
-      <dialog open={isOpen} className={styles.dialog}>
-        {children}
-        <button onClick={handleClose}>Close</button>
-      </dialog>
-    ),
+    () =>
+      isOpen ? (
+        <dialog open className={styles.dialog}>
+          {children}
+          <button onClick={handleClose}>Close</button>
+        </dialog>
+      ) : null,
     [children, handleClose, isOpen]
   );
 };
