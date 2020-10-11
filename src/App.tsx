@@ -5,25 +5,27 @@ import Loading from "components/Loading";
 import useServiceWorker from "hooks/useServiceWorker";
 import styles from "./App.module.css";
 
-const Dialog = lazy(() => import("components/Dialog"));
+const InitialServiceWorkerInstallationDialog = lazy(
+  () =>
+    import(
+      "hooks/useServiceWorker/components/InitialServiceWorkerInstallationDialog"
+    )
+);
+const UpdateForServiceWorkerAvailableDialog = lazy(
+  () =>
+    import(
+      "hooks/useServiceWorker/components/UpdateForServiceWorkerAvailableDialog"
+    )
+);
 
 const App = () => {
   const routes = useRoutes();
-  const { isInitialized, isUpdated, updateServiceWorker } = useServiceWorker();
+  const { isInitialized, isUpdated } = useServiceWorker();
   return (
     <div className={styles.container}>
       <Suspense fallback={null}>
-        {isInitialized && (
-          <Dialog duration={5000}>
-            <p>Page has been saved for offline use</p>
-          </Dialog>
-        )}
-        {isUpdated && (
-          <Dialog>
-            <p>There is a new version available.</p>
-            <button onClick={updateServiceWorker}>Update</button>
-          </Dialog>
-        )}
+        {isInitialized && <InitialServiceWorkerInstallationDialog />}
+        {isUpdated && <UpdateForServiceWorkerAvailableDialog />}
       </Suspense>
       <Router>
         <Switch>

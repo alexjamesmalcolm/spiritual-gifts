@@ -32,6 +32,7 @@ export const serviceWorkerSlice = createSlice({
       serviceWorkerUpdated: true,
       serviceWorkerRegistration: action.payload,
     }),
+    initiatedUpdate: (state) => ({ ...state, serviceWorkerUpdated: false }),
   },
 });
 
@@ -39,6 +40,7 @@ export const serviceWorkerSlice = createSlice({
 export const {
   serviceWorkerInitialized,
   serviceWorkerUpdated,
+  initiatedUpdate,
 } = serviceWorkerSlice.actions;
 
 // The function below is called a thunk and allows us to perform async logic. It

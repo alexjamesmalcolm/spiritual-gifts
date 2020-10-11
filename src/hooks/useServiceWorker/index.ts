@@ -1,6 +1,7 @@
 import { useCallback, useMemo } from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "store";
+import { initiatedUpdate } from "hooks/useServiceWorker/reducer";
 
 const useServiceWorker = () => {
   const isUpdated = useSelector(
@@ -12,6 +13,7 @@ const useServiceWorker = () => {
   const registration = useSelector(
     (store: RootState) => store.serviceWorker.serviceWorkerRegistration
   );
+  const dispatch = useDispatch();
   const updateServiceWorker = useCallback(() => {
     if (registration) {
       const registrationWaiting = registration.waiting;
@@ -24,7 +26,8 @@ const useServiceWorker = () => {
         });
       }
     }
-  }, [registration]);
+    dispatch(initiatedUpdate);
+  }, [dispatch, registration]);
   return useMemo(
     () => ({
       isUpdated,
