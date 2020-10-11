@@ -17,4 +17,6 @@ dialog {
   border-color: initial;
   border-image: initial;
   padding: 1em;
+  color: black;
+  background: white;
 }
