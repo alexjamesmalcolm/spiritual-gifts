@@ -15,19 +15,25 @@ const useServiceWorker = () => {
   );
   const dispatch = useDispatch();
   const updateServiceWorker = useCallback(() => {
-    if (registration) {
-      const registrationWaiting = registration.waiting;
-      if (registrationWaiting) {
-        registrationWaiting.postMessage({ type: "SKIP_WAITING" });
-        registrationWaiting.addEventListener("statechange", (e: any) => {
-          if (e.target.state === "activated") {
-            window.location.reload();
-          }
-        });
+    if (isUpdated) {
+      if (registration) {
+        const registrationWaiting = registration.waiting;
+        if (registrationWaiting) {
+          registrationWaiting.postMessage({ type: "SKIP_WAITING" });
+          registrationWaiting.addEventListener("statechange", (e: any) => {
+            if (e.target.state === "activated") {
+              window.location.reload();
+            }
+          });
+        } else {
+          window.location.reload();
+        }
+      } else {
+        window.location.reload();
       }
     }
     dispatch(initiatedUpdate);
-  }, [dispatch, registration]);
+  }, [dispatch, isUpdated, registration]);
   return useMemo(
     () => ({
       isUpdated,
