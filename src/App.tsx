@@ -1,12 +1,32 @@
-import React, { Suspense } from "react";
+import React, { lazy, Suspense } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import useRoutes from "hooks/useRoutes";
 import Loading from "components/Loading";
+import useServiceWorker from "hooks/useServiceWorker";
+import styles from "./App.module.css";
+
+const InitialServiceWorkerInstallationDialog = lazy(
+  () =>
+    import(
+      "hooks/useServiceWorker/components/InitialServiceWorkerInstallationDialog"
+    )
+);
+const UpdateForServiceWorkerAvailableDialog = lazy(
+  () =>
+    import(
+      "hooks/useServiceWorker/components/UpdateForServiceWorkerAvailableDialog"
+    )
+);
 
 const App = () => {
   const routes = useRoutes();
+  const { isInitialized, isUpdated } = useServiceWorker();
   return (
-    <div>
+    <div className={styles.container}>
+      <Suspense fallback={null}>
+        {isInitialized && <InitialServiceWorkerInstallationDialog />}
+        {isUpdated && <UpdateForServiceWorkerAvailableDialog />}
+      </Suspense>
       <Router>
         <Switch>
           {routes.map(({ path, Component }) => (
