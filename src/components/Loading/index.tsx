@@ -1,10 +1,9 @@
 import React from "react";
-import styles from "./Progress.module.css";
-import { Refreshing } from "css-spinners-react";
+import styles from "./Loading.module.css";
 
 const Loading = () => (
   <div className={styles.container}>
-    <Refreshing />
+    <div className={styles.loader} />
   </div>
 );
 
