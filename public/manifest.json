@@ -18,12 +18,6 @@
       "type": "image/png",
       "purpose": "maskable"
     },
-    // {
-    //   "src": "/monochrome.png",
-    //   "sizes": "682x682",
-    //   "type": "image/png",
-    //   "purpose": "monochrome"
-    // },
     {
       "src": "/favicon.ico",
       "sizes": "48x48",
