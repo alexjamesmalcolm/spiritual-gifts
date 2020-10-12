@@ -6,6 +6,7 @@ import classNames from "classnames";
 import styles from "./QuestionSection.module.css";
 import { questionsPerPage, setsOfQuestions } from "utils/constants";
 import SubmitAssessmentLink from "./components/SubmitAssessmentLink";
+import { Helmet } from "react-helmet-async";
 
 const PaginationControls = () => {
   const params: { questionSetNumber: string } = useParams();
@@ -19,7 +20,7 @@ const PaginationControls = () => {
     () => questionSetNumber !== setsOfQuestions,
     [questionSetNumber]
   );
-  const { unansweredQuestions } = useAnswers();
+  const { unansweredQuestions, questionsWithAnswers } = useAnswers();
   const currentPageQuestions = useQuestionSet(questionSetNumber);
   const unansweredQuestionsFromPreviousPages = useMemo(
     () =>
@@ -31,8 +32,23 @@ const PaginationControls = () => {
   const isAbleToFinish = useMemo(() => unansweredQuestions.length === 0, [
     unansweredQuestions.length,
   ]);
+  const percentageDone = useMemo<number>(
+    () =>
+      (100 *
+        questionsWithAnswers.filter((question) => question.answer !== undefined)
+          .length) /
+      questionsWithAnswers.length,
+    [questionsWithAnswers]
+  );
+  const precisePercentageDone = useMemo<string>(
+    () => Number(percentageDone.toPrecision(3)).toString(),
+    [percentageDone]
+  );
   return (
     <div className={styles.paginationContainer}>
+      <Helmet>
+        <title>Spiritual Gifts - {precisePercentageDone}% Done</title>
+      </Helmet>
       <div className={styles.paginationLinks}>
         <Link to="/">Home</Link>
         {isAbleToGoBack && (

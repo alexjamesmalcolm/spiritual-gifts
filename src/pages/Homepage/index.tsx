@@ -1,5 +1,6 @@
 import useAnswers from "hooks/useAnswers";
 import React, { useMemo } from "react";
+import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
 import { questionsPerPage } from "utils/constants";
 import styles from "./Homepage.module.css";
@@ -18,6 +19,11 @@ const Homepage = () => {
   );
   return (
     <div className={styles.container}>
+      <Helmet>
+        <title>
+          Spiritual Gifts Assessment{hasStarted ? " - In Progress" : ""}
+        </title>
+      </Helmet>
       <h1>Spiritual Gifts Assessment</h1>
       <p>
         Respond to the following assessment according to who you are, not who
