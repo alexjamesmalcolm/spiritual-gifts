@@ -9,11 +9,14 @@ import {
   serviceWorkerInitialized,
   serviceWorkerUpdated,
 } from "hooks/useServiceWorker/reducer";
+import { HelmetProvider } from "react-helmet-async";
 
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
-      <App />
+      <HelmetProvider>
+        <App />
+      </HelmetProvider>
     </Provider>
   </React.StrictMode>,
   document.getElementById("root")
