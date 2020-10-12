@@ -1,0 +1,7 @@
+.container {
+  margin-bottom: 1rem;
+}
+.links {
+  display: flex;
+  justify-content: space-evenly;
+}
