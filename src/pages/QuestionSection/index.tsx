@@ -1,84 +1,10 @@
 import React, { Fragment, useMemo } from "react";
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import useAnswers from "hooks/useAnswers";
-import useQuestionSet from "hooks/useQuestionSet";
 import classNames from "classnames";
 import styles from "./QuestionSection.module.css";
-import { questionsPerPage, setsOfQuestions } from "utils/constants";
-import SubmitAssessmentLink from "./components/SubmitAssessmentLink";
+import PaginationControls from "./components/PaginationControls";
 import { Helmet } from "react-helmet-async";
-
-const PaginationControls = () => {
-  const params: { questionSetNumber: string } = useParams();
-  const questionSetNumber = useMemo(() => Number(params.questionSetNumber), [
-    params.questionSetNumber,
-  ]);
-  const isAbleToGoBack = useMemo(() => questionSetNumber !== 1, [
-    questionSetNumber,
-  ]);
-  const isAbleToGoForwards = useMemo(
-    () => questionSetNumber !== setsOfQuestions,
-    [questionSetNumber]
-  );
-  const { unansweredQuestions, questionsWithAnswers } = useAnswers();
-  const currentPageQuestions = useQuestionSet(questionSetNumber);
-  const unansweredQuestionsFromPreviousPages = useMemo(
-    () =>
-      unansweredQuestions.filter(
-        (question) => question.number < currentPageQuestions[0].number
-      ),
-    [currentPageQuestions, unansweredQuestions]
-  );
-  const isAbleToFinish = useMemo(() => unansweredQuestions.length === 0, [
-    unansweredQuestions.length,
-  ]);
-  const percentageDone = useMemo<number>(
-    () =>
-      (100 *
-        questionsWithAnswers.filter((question) => question.answer !== undefined)
-          .length) /
-      questionsWithAnswers.length,
-    [questionsWithAnswers]
-  );
-  const precisePercentageDone = useMemo<string>(
-    () => Number(percentageDone.toPrecision(3)).toString(),
-    [percentageDone]
-  );
-  return (
-    <div className={styles.paginationContainer}>
-      <Helmet>
-        <title>Spiritual Gifts - {precisePercentageDone}% Done</title>
-      </Helmet>
-      <div className={styles.paginationLinks}>
-        <Link to="/">Home</Link>
-        {isAbleToGoBack && (
-          <Link to={`/question-set/${questionSetNumber - 1}`}>Previous</Link>
-        )}
-        {isAbleToGoForwards && (
-          <Link to={`/question-set/${questionSetNumber + 1}`}>Next</Link>
-        )}
-        {isAbleToFinish && <SubmitAssessmentLink />}
-      </div>
-      {unansweredQuestionsFromPreviousPages.length > 0 && (
-        <div className={styles.unansweredQuestions}>
-          <p>Please go back and answer the following questions:</p>
-          {unansweredQuestionsFromPreviousPages.map((question) => (
-            <span key={question.number}>
-              <Link
-                to={`/question-set/${Math.ceil(
-                  question.number / questionsPerPage
-                )}`}
-              >
-                {question.number}
-              </Link>
-              ,{" "}
-            </span>
-          ))}
-        </div>
-      )}
-    </div>
-  );
-};
 
 interface Answer {
   value: 0 | 1 | 2 | 3;
@@ -100,8 +26,23 @@ const QuestionSection = () => {
     ],
     []
   );
+  const percentageDone = useMemo<number>(
+    () =>
+      (100 *
+        questionsWithAnswers.filter((question) => question.answer !== undefined)
+          .length) /
+      questionsWithAnswers.length,
+    [questionsWithAnswers]
+  );
+  const precisePercentageDone = useMemo<string>(
+    () => Number(percentageDone.toPrecision(3)).toString(),
+    [percentageDone]
+  );
   return (
     <div className={styles.container}>
+      <Helmet>
+        <title>Spiritual Gifts - {precisePercentageDone}% Done</title>
+      </Helmet>
       <header>
         <PaginationControls />
       </header>
