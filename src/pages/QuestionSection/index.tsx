@@ -102,7 +102,7 @@ const QuestionSection = () => {
         })}
       </main>
       <footer>
-        <PaginationControls />
+        <PaginationControls isSimple />
       </footer>
     </div>
   );

@@ -6,7 +6,7 @@ import { questionsPerPage, setsOfQuestions } from "utils/constants";
 import SubmitAssessmentLink from "../SubmitAssessmentLink";
 import styles from "./PaginationControls.module.css";
 
-const PaginationControls = () => {
+const PaginationControls = ({ isSimple = false }: { isSimple?: boolean }) => {
   const params: { questionSetNumber: string } = useParams();
   const questionSetNumber = useMemo(() => Number(params.questionSetNumber), [
     params.questionSetNumber,
@@ -30,36 +30,47 @@ const PaginationControls = () => {
   const isAbleToFinish = useMemo(() => unansweredQuestions.length === 0, [
     unansweredQuestions.length,
   ]);
-  return (
-    <div className={styles.container}>
-      <div className={styles.links}>
-        <Link to="/">Home</Link>
-        {isAbleToGoBack && (
-          <Link to={`/question-set/${questionSetNumber - 1}`}>Previous</Link>
-        )}
-        {isAbleToGoForwards && (
-          <Link to={`/question-set/${questionSetNumber + 1}`}>Next</Link>
-        )}
-        {isAbleToFinish && <SubmitAssessmentLink />}
-      </div>
-      {unansweredQuestionsFromPreviousPages.length > 0 && (
-        <div>
-          <p>Please go back and answer the following questions:</p>
-          {unansweredQuestionsFromPreviousPages.map((question) => (
-            <span key={question.number}>
-              <Link
-                to={`/question-set/${Math.ceil(
-                  question.number / questionsPerPage
-                )}`}
-              >
-                {question.number}
-              </Link>
-              ,{" "}
-            </span>
-          ))}
+  return useMemo(
+    () => (
+      <div className={styles.container}>
+        <div className={styles.links}>
+          {!isSimple && <Link to="/">Home</Link>}
+          {isAbleToGoBack && (
+            <Link to={`/question-set/${questionSetNumber - 1}`}>Previous</Link>
+          )}
+          {isAbleToGoForwards && (
+            <Link to={`/question-set/${questionSetNumber + 1}`}>Next</Link>
+          )}
+          {isAbleToFinish && <SubmitAssessmentLink />}
         </div>
-      )}
-    </div>
+        {(!isSimple || isAbleToFinish) &&
+          unansweredQuestionsFromPreviousPages.length > 0 && (
+            <div>
+              <p>Please go back and answer the following questions:</p>
+              {unansweredQuestionsFromPreviousPages.map((question) => (
+                <span key={question.number}>
+                  <Link
+                    to={`/question-set/${Math.ceil(
+                      question.number / questionsPerPage
+                    )}`}
+                  >
+                    {question.number}
+                  </Link>
+                  ,{" "}
+                </span>
+              ))}
+            </div>
+          )}
+      </div>
+    ),
+    [
+      isAbleToFinish,
+      isAbleToGoBack,
+      isAbleToGoForwards,
+      isSimple,
+      questionSetNumber,
+      unansweredQuestionsFromPreviousPages,
+    ]
   );
 };
 
