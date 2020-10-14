@@ -97,7 +97,9 @@ const QuestionSection = () => {
           );
         })}
       </main>
-      <PaginationControls />
+      <footer>
+        <PaginationControls />
+      </footer>
     </div>
   );
 };
