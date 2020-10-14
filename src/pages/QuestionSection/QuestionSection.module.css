@@ -1,6 +1,6 @@
-.paginationLinks {
-  display: flex;
-  justify-content: space-evenly;
+.container {
+  overflow-y: auto;
+  height: 100vh;
 }
 .fieldSet {
   margin-bottom: 1rem;

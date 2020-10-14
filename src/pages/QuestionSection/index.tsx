@@ -1,4 +1,4 @@
-import React, { Fragment, useMemo } from "react";
+import React, { Fragment, useEffect, useMemo, useRef } from "react";
 import { useParams } from "react-router-dom";
 import useAnswers from "hooks/useAnswers";
 import classNames from "classnames";
@@ -38,8 +38,12 @@ const QuestionSection = () => {
     () => Number(percentageDone.toPrecision(3)).toString(),
     [percentageDone]
   );
+  const containerRef = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    containerRef.current?.scrollTo(0, 0);
+  }, [questionSetNumber]);
   return (
-    <div className={styles.container}>
+    <div ref={containerRef} className={styles.container}>
       <Helmet>
         <title>Spiritual Gifts - {precisePercentageDone}% Done</title>
       </Helmet>
@@ -97,7 +101,9 @@ const QuestionSection = () => {
           );
         })}
       </main>
-      <PaginationControls />
+      <footer>
+        <PaginationControls />
+      </footer>
     </div>
   );
 };
