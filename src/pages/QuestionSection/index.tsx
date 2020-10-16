@@ -5,6 +5,7 @@ import classNames from "classnames";
 import styles from "./QuestionSection.module.css";
 import PaginationControls from "./components/PaginationControls";
 import { Helmet } from "react-helmet-async";
+import usePercentageDone from "hooks/usePercentageDone";
 
 interface Answer {
   value: 0 | 1 | 2 | 3;
@@ -26,18 +27,7 @@ const QuestionSection = () => {
     ],
     []
   );
-  const percentageDone = useMemo<number>(
-    () =>
-      (100 *
-        questionsWithAnswers.filter((question) => question.answer !== undefined)
-          .length) /
-      questionsWithAnswers.length,
-    [questionsWithAnswers]
-  );
-  const precisePercentageDone = useMemo<string>(
-    () => Number(percentageDone.toPrecision(3)).toString(),
-    [percentageDone]
-  );
+  const percentageDone = usePercentageDone();
   const containerRef = useRef<HTMLDivElement>(null);
   useEffect(() => {
     containerRef.current?.scrollTo(0, 0);
@@ -45,7 +35,7 @@ const QuestionSection = () => {
   return (
     <div ref={containerRef} className={styles.container}>
       <Helmet>
-        <title>Spiritual Gifts - {precisePercentageDone}% Done</title>
+        <title>Spiritual Gifts - {percentageDone}% Done</title>
       </Helmet>
       <header>
         <PaginationControls />
