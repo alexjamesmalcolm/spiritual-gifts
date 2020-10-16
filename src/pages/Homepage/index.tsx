@@ -1,5 +1,5 @@
+import { useMemo } from "react";
 import useAnswers from "hooks/useAnswers";
-import React, { useMemo } from "react";
 import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
 import { questionsPerPage } from "utils/constants";

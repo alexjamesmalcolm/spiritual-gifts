@@ -1,4 +1,4 @@
-import React, { useMemo } from "react";
+import { useMemo } from "react";
 import { Result } from "hooks/useResults";
 import { useParams } from "react-router-dom";
 import { decompress } from "lzutf8";

@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from "react";
+import { useMemo, useState } from "react";
 import { Result } from "hooks/useResults";
 import styles from "../../Results.module.css";
 

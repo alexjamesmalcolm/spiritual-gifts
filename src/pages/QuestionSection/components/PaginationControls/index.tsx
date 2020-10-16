@@ -1,6 +1,6 @@
+import { useMemo } from "react";
 import useAnswers from "hooks/useAnswers";
 import useQuestionSet from "hooks/useQuestionSet";
-import React, { useMemo } from "react";
 import { Link, useParams } from "react-router-dom";
 import { questionsPerPage, setsOfQuestions } from "utils/constants";
 import SubmitAssessmentLink from "../SubmitAssessmentLink";

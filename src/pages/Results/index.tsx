@@ -1,4 +1,4 @@
-import React, { lazy } from "react";
+import { lazy } from "react";
 import useDecompressedResults from "hooks/useDecompressedResults";
 const BadResultsLink = lazy(() => import("./components/BadResultsLink"));
 const ValidResults = lazy(() => import("./components/ValidResults"));

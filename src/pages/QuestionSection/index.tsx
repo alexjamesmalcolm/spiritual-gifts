@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect, useMemo, useRef } from "react";
+import { Fragment, useEffect, useMemo, useRef } from "react";
 import { useParams } from "react-router-dom";
 import useAnswers from "hooks/useAnswers";
 import classNames from "classnames";
