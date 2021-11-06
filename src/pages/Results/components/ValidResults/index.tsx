@@ -1,4 +1,3 @@
-import React from "react";
 import classNames from "classnames";
 import styles from "../../Results.module.css";
 import ResultCategory from "../ResultCategory";

@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from "react";
+import { useMemo, useState } from "react";
 import { Result } from "hooks/useResults";
 import styles from "../../Results.module.css";
 
@@ -7,9 +7,10 @@ const ResultCategory = ({
 }: {
   result: Result;
 }) => {
-  const isDescriptionExpandedByDefault = useMemo<boolean>(() => rank <= 3, [
-    rank,
-  ]);
+  const isDescriptionExpandedByDefault = useMemo<boolean>(
+    () => rank <= 3,
+    [rank]
+  );
   const [isDescriptionExpanded, setIsDescriptionExpanded] = useState(
     isDescriptionExpandedByDefault
   );

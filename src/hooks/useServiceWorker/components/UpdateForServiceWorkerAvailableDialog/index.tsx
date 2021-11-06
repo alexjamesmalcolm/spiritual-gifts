@@ -1,4 +1,3 @@
-import React from "react";
 import Dialog from "components/Dialog";
 import useServiceWorker from "hooks/useServiceWorker";
 import styles from "./UpdateForServiceWorkerAvailableDialog.module.css";

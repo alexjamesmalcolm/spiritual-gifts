@@ -1,4 +1,4 @@
-import React, { lazy } from "react";
+import { lazy } from "react";
 import useServiceWorker from "hooks/useServiceWorker";
 
 const InitialServiceWorkerInstallationDialog = lazy(
