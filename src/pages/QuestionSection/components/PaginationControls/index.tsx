@@ -1,19 +1,21 @@
 import useAnswers from "hooks/useAnswers";
 import useQuestionSet from "hooks/useQuestionSet";
-import React, { useMemo } from "react";
+import { useMemo } from "react";
 import { Link, useParams } from "react-router-dom";
 import { questionsPerPage, setsOfQuestions } from "utils/constants";
 import SubmitAssessmentLink from "../SubmitAssessmentLink";
 import styles from "./PaginationControls.module.css";
 
 const PaginationControls = () => {
-  const params: { questionSetNumber: string } = useParams();
-  const questionSetNumber = useMemo(() => Number(params.questionSetNumber), [
-    params.questionSetNumber,
-  ]);
-  const isAbleToGoBack = useMemo(() => questionSetNumber !== 1, [
-    questionSetNumber,
-  ]);
+  const params = useParams<"questionSetNumber">();
+  const questionSetNumber = useMemo(
+    () => Number(params.questionSetNumber),
+    [params.questionSetNumber]
+  );
+  const isAbleToGoBack = useMemo(
+    () => questionSetNumber !== 1,
+    [questionSetNumber]
+  );
   const isAbleToGoForwards = useMemo(
     () => questionSetNumber !== setsOfQuestions,
     [questionSetNumber]
@@ -27,9 +29,10 @@ const PaginationControls = () => {
       ),
     [currentPageQuestions, unansweredQuestions]
   );
-  const isAbleToFinish = useMemo(() => unansweredQuestions.length === 0, [
-    unansweredQuestions.length,
-  ]);
+  const isAbleToFinish = useMemo(
+    () => unansweredQuestions.length === 0,
+    [unansweredQuestions.length]
+  );
   return (
     <div className={styles.container}>
       <div className={styles.links}>

@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect, useMemo, useRef } from "react";
+import { Fragment, useEffect, useMemo, useRef } from "react";
 import { useParams } from "react-router-dom";
 import useAnswers from "hooks/useAnswers";
 import classNames from "classnames";
@@ -13,11 +13,10 @@ interface Answer {
 }
 
 const QuestionSection = () => {
-  const params: { questionSetNumber: string } = useParams();
+  const params = useParams<"questionSetNumber">();
   const questionSetNumber = Number(params.questionSetNumber);
-  const { answerQuestion, questionsWithAnswers } = useAnswers(
-    questionSetNumber
-  );
+  const { answerQuestion, questionsWithAnswers } =
+    useAnswers(questionSetNumber);
   const answers = useMemo<Answer[]>(
     () => [
       { value: 0, textContent: "Not at all, never" },

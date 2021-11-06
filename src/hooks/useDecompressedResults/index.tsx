@@ -1,11 +1,11 @@
-import React, { useMemo } from "react";
+import { useMemo } from "react";
 import { Result } from "hooks/useResults";
 import { useParams } from "react-router-dom";
 import { decompress } from "lzutf8";
 import useCategories, { CategoryName } from "hooks/useCategories";
 
 const useDecompressedResults = (): Result[] | undefined => {
-  const { compressedResults }: { compressedResults: string } = useParams();
+  const { compressedResults = "" } = useParams<"compressedResults">();
   const categories = useCategories();
   return useMemo<Result[] | undefined>(() => {
     try {
@@ -32,7 +32,9 @@ const useDecompressedResults = (): Result[] | undefined => {
         .sort((a, b) => b.score - a.score)
         .map((category, index) => ({ ...category, rank: index + 1 }));
     } catch (error) {
-      console.groupCollapsed(`Error Parsing Results Link: ${error.message}`);
+      if (error instanceof Error) {
+        console.groupCollapsed(`Error Parsing Results Link: ${error.message}`);
+      }
       console.warn(error);
       console.groupEnd();
       return undefined;

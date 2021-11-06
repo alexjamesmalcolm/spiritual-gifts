@@ -1,5 +1,5 @@
-import React, { lazy, Suspense } from "react";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { lazy, Suspense } from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import useRoutes from "hooks/useRoutes";
 import Loading from "components/Loading";
 import styles from "./App.module.css";
@@ -14,15 +14,15 @@ const App = () => {
         <ServiceWorker />
       </Suspense>
       <Router>
-        <Switch>
+        <Routes>
           {routes.map(({ path, Component }) => (
-            <Route exact path={path} key={path}>
+            <Route path={path} key={path}>
               <Suspense fallback={<Loading />}>
                 <Component />
               </Suspense>
             </Route>
           ))}
-        </Switch>
+        </Routes>
       </Router>
     </div>
   );

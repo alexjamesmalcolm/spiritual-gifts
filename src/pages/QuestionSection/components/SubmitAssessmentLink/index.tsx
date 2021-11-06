@@ -1,4 +1,4 @@
-import React, { useMemo } from "react";
+import { useMemo } from "react";
 import useAnswers from "hooks/useAnswers";
 import useCompressedResults from "hooks/useCompressedResults";
 import { Link } from "react-router-dom";
