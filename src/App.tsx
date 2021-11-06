@@ -16,11 +16,15 @@ const App = () => {
       <Router>
         <Routes>
           {routes.map(({ path, Component }) => (
-            <Route path={path} key={path}>
-              <Suspense fallback={<Loading />}>
-                <Component />
-              </Suspense>
-            </Route>
+            <Route
+              path={path}
+              key={path}
+              element={
+                <Suspense fallback={<Loading />}>
+                  <Component />
+                </Suspense>
+              }
+            />
           ))}
         </Routes>
       </Router>
