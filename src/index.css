@@ -5,4 +5,28 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  color: var(--text-color);
+  background-color: var(--background-color);
+}
+
+a {
+  color: var(--link-color);
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --text-color: black;
+    --background-color: white;
+    --secondary-background-color: #ffffb4;
+    --link-color: blue;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --text-color: white;
+    --background-color: black;
+    --secondary-background-color: #403434;
+    --link-color: lightcoral;
+  }
 }

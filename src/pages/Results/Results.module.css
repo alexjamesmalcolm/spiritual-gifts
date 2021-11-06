@@ -25,8 +25,8 @@
 .description {
   grid-column: 1/4;
   margin-bottom: 1rem;
-  background-color: #ffffb4;
-  border: 1px black solid;
+  background-color: var(--secondary-background-color);
+  border: 1px var(--text-color) solid;
   border-top: none;
 }
 .rank {
