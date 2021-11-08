@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ResultCategory should render Administration result 1`] = `
+<div>
+  <div
+    class="name"
+  >
+    Administration
+  </div>
+  <div
+    class="score"
+  >
+    20
+  </div>
+  <div
+    class="rank"
+  >
+    2
+  </div>
+  <div
+    class="description"
+  >
+    <button>
+      Collapse
+    </button>
+    <p>
+      Description
+    </p>
+  </div>
+</div>
+`;
