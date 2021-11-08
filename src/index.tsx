@@ -3,21 +3,18 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
 import { store } from "./store";
-import { Provider } from "react-redux";
 import * as serviceWorkerRegistration from "./serviceWorkerRegistration";
 import reportWebVitals from "./reportWebVitals";
 import {
   serviceWorkerInitialized,
   serviceWorkerUpdated,
 } from "hooks/useServiceWorker/reducer";
-import { HelmetProvider } from "react-helmet-async";
+import Provider from "Provider";
 
 ReactDOM.render(
   <StrictMode>
-    <Provider store={store}>
-      <HelmetProvider>
-        <App />
-      </HelmetProvider>
+    <Provider>
+      <App />
     </Provider>
   </StrictMode>,
   document.getElementById("root")
