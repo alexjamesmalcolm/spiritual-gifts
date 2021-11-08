@@ -4,7 +4,7 @@ import Provider from "Provider";
 import ValidResults from ".";
 
 describe("ValidResults", () => {
-  it("render a single result", () => {
+  it("should render a single result", () => {
     const results: Result[] = [
       {
         description: <p>Description</p>,
