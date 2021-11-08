@@ -1,0 +1,68 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ValidResults render a single result 1`] = `
+<div>
+  <div
+    class="container"
+  >
+    <h2>
+      Results
+    </h2>
+    <p
+      class="linkDescription"
+    >
+      Bookmark this page if you want to revisit or share your results.
+    </p>
+    <a
+      class="resultsLink"
+      href="http://localhost/"
+    >
+      http://localhost/
+    </a>
+    <div
+      class="resultsContainer"
+    >
+      <p
+        class="header name"
+      >
+        NAME
+      </p>
+      <p
+        class="header score"
+      >
+        SCORE
+      </p>
+      <p
+        class="header rank"
+      >
+        RANK
+      </p>
+      <div
+        class="name"
+      >
+        Administration
+      </div>
+      <div
+        class="score"
+      >
+        1
+      </div>
+      <div
+        class="rank"
+      >
+        1
+      </div>
+      <div
+        class="description"
+      >
+        <button>
+          Collapse
+        </button>
+        <p>
+          Description
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+`;
