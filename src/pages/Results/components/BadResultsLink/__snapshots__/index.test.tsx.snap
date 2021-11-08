@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BadResultsLink should render bad results link page 1`] = `
+<div>
+  <div
+    class="container"
+  >
+    <p>
+      No results found at this link
+    </p>
+    <a
+      href="/"
+    >
+      Return Home
+    </a>
+  </div>
+</div>
+`;
